@@ -1,11 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc7t0rn0po8th"]
+[gd_scene load_steps=4 format=3 uid="uid://cc7t0rn0po8th"]
 
 [ext_resource type="Texture2D" uid="uid://cugnylftce3di" path="res://Assets/Gaphics/enemies/fish.png" id="1_6nqui"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy.gd" id="2_6op01"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ryu4y"]
+radius = 1.0
+height = 3.969
+
 [node name="Enemy" type="Sprite3D"]
-billboard = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+billboard = 2
 texture = ExtResource("1_6nqui")
 script = ExtResource("2_6op01")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="HitboxHead" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxHead"]
+transform = Transform3D(-1, 0, 2.78142e-07, 0, 1, 0, -2.78142e-07, 0, -1, -0.5, 2.5, -0.5)
+shape = SubResource("CapsuleShape3D_ryu4y")
