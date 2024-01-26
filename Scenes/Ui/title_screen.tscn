@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dxk27vl1b7w7c"]
+[gd_scene load_steps=2 format=3 uid="uid://dxk27vl1b7w7c"]
+
+[ext_resource type="Script" path="res://Scripts/Ui/title_screen.gd" id="1_23ck3"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_23ck3")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -26,3 +29,5 @@ text = "Play"
 [node name="RepoLinkButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Source Code"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RepoLinkButton" to="." method="_on_repo_link_button_pressed"]
