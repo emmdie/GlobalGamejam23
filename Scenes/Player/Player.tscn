@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://baeoasb40ibv4"]
+
+[ext_resource type="Script" path="res://Scripts/Player/player_main.gd" id="1_mrhpv"]
+[ext_resource type="Script" path="res://Scripts/Player/player_look.gd" id="2_mjlar"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xapke"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_0yap6"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_mrhpv")
+
+[node name="BodyCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_xapke")
+
+[node name="GroundCollider" type="CollisionShape3D" parent="."]
+shape = SubResource("SeparationRayShape3D_0yap6")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6824, 0)
+script = ExtResource("2_mjlar")
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
