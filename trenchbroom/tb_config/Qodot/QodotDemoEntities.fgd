@@ -1,0 +1,8 @@
+@PointClass size(-8 -8 -8, 8 8 8) = physics_ball : "Physics Ball" [
+	mass(float) :  : "1"
+	size(float) :  : "1"
+	velocity(string) : "Initial velocity" : "0 0 0"
+]
+
+@PointClass color(255 255 255) frame() path() scale() size(-8 -8 -8, 8 8 8) skin() = demo_model : "A demonstration of importing a model into trenchbroom from Godot." [
+]
