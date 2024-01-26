@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://baeoasb40ibv4"]
+[gd_scene load_steps=12 format=3 uid="uid://baeoasb40ibv4"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player_main.gd" id="1_mrhpv"]
+[ext_resource type="PackedScene" uid="uid://flhnxq6k1liu" path="res://Scenes/BulletHoles/bullet_hole.tscn" id="2_ln82l"]
 [ext_resource type="Script" path="res://Scripts/Player/player_look.gd" id="2_mjlar"]
 [ext_resource type="Texture2D" uid="uid://b4cx7vvtrfv51" path="res://Assets/Gaphics/player/gun_min.png" id="3_6odyb"]
+[ext_resource type="Script" path="res://Scripts/Player/player_hud.gd" id="4_6i8rx"]
 [ext_resource type="Script" path="res://Scripts/Player/player_weapon.gd" id="4_hhv1j"]
+[ext_resource type="Texture2D" uid="uid://71ua2d7vv2sd" path="res://Assets/Gaphics/crosshair.png" id="6_5eolx"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xapke"]
 
@@ -19,6 +22,7 @@ point_count = 3
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_mrhpv")
+bulletHoleScene = ExtResource("2_ln82l")
 
 [node name="BodyCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -42,6 +46,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_6i8rx")
 
 [node name="Weapon" type="TextureRect" parent="HUD"]
 unique_name_in_owner = true
@@ -63,3 +68,19 @@ expand_mode = 1
 script = ExtResource("4_hhv1j")
 horizontal_sway = SubResource("Curve_70kn1")
 vertical_sway = SubResource("Curve_b8rmx")
+
+[node name="CrossHair" type="TextureRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(16, 16)
+texture = ExtResource("6_5eolx")

@@ -5,9 +5,9 @@ const SWAY_EFFECT = 0.06
 const SWAY_LERP = 0.05
 
 @export var y_limit := 90.0
-
 @onready var player: Player = get_parent()
 @onready var original_cam_position = position
+
 
 var mouse_axis := Vector2()
 var _mouse_sensitivity: float = 0.0
@@ -22,6 +22,13 @@ func _ready() -> void:
 
 func update_mouse_sensitivity():
 	_mouse_sensitivity = player.mouse_sensitivity / 1000
+
+
+func shoot_ray() -> Dictionary:
+	var space = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(global_position,global_position - global_transform.basis.z * 100)
+	return space.intersect_ray(query)
+	
 
 # Called when there is an input event
 func _input(event: InputEvent) -> void:

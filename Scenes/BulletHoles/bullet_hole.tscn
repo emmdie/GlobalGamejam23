@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://flhnxq6k1liu"]
+
+[ext_resource type="Texture2D" uid="uid://bkjtb2w35uh2n" path="res://Assets/Gaphics/bullet_hole.png" id="1_e4xq3"]
+[ext_resource type="Shader" path="res://Shaders/default.gdshader" id="1_julq4"]
+[ext_resource type="Texture2D" uid="uid://bddjyetiuubt4" path="res://Assets/Gaphics/bullet_hole_emmision.png" id="2_icbrq"]
+[ext_resource type="Script" path="res://Scripts/bullet_hole_decal.gd" id="3_7hmdf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b0gdr"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_julq4")
+shader_parameter/emission_mask_color = Color(0.960784, 0.423529, 0.180392, 1)
+shader_parameter/emission_color = null
+shader_parameter/alpha = 1.0
+shader_parameter/albedo = ExtResource("1_e4xq3")
+shader_parameter/emission_mask = ExtResource("2_icbrq")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gt0fs"]
+size = Vector2(0.1, 0.1)
+
+[node name="bullet_hole" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.02)
+material_override = SubResource("ShaderMaterial_b0gdr")
+mesh = SubResource("PlaneMesh_gt0fs")
+script = ExtResource("3_7hmdf")
+
+[node name="decay_timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="cooldown_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="decay_timer" to="." method="_on_decay_timer_timeout"]
+[connection signal="timeout" from="cooldown_timer" to="." method="_on_cooldown_timer_timeout"]
