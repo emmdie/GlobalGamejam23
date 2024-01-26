@@ -22,12 +22,18 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Play"
+
+[node name="CreditsButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits
+"
 
 [node name="RepoLinkButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Source Code"
 
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/RepoLinkButton" to="." method="_on_repo_link_button_pressed"]
