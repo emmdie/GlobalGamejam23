@@ -35,5 +35,6 @@ text = "Credits
 layout_mode = 2
 text = "Source Code"
 
+[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/RepoLinkButton" to="." method="_on_repo_link_button_pressed"]
