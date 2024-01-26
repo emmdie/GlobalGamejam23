@@ -3,8 +3,6 @@ extends Camera3D
 
 const SWAY_EFFECT = 0.06
 const SWAY_LERP = 0.05
-const BOB_SPEED = 4
-const BOB_INTENSITY = 3
 
 @export var y_limit := 90.0
 
@@ -36,17 +34,9 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:	
 	_reset_cam()
 	_sway()
-	_bob(delta)
 
 func _sway():
 	rotation.z = lerp(rotation.z, -clamp(player.input_dir.x, -SWAY_EFFECT, SWAY_EFFECT), SWAY_LERP)
-
-func _bob(_delta):
-	if player.is_on_floor():
-		if player.input_dir.y < 0:
-			position.y = lerp(position.y, position.y+sin(_time * BOB_SPEED) * BOB_INTENSITY, 0.7)
-		if player.input_dir.y > 0:
-			position.y = lerp(position.y, position.y+-sin(_time * BOB_SPEED) * BOB_INTENSITY, 0.7)
 
 func rumble(x,y):
 	position.x = randf_range(position.x-x, position.x+x)

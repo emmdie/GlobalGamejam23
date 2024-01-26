@@ -24,7 +24,7 @@ var in_coyote_time = false
 var gravity = 32
 
 @onready var coyoteTimer: Timer = get_node("CoyoteTimer")
-
+@onready var weaponSprite: WeaponSprite = get_node("HUD/Weapon")
 func _ready():
 	add_to_group("players")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -38,6 +38,9 @@ func _process(delta: float):
 
 	input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
+	if input_dir.y != 0:
+		weaponSprite.do_bob(delta)
 	
 	_calculate_velocity(direction, delta)
 	# Handle Jump.
