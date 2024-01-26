@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc7t0rn0po8th"]
+
+[ext_resource type="Texture2D" uid="uid://cugnylftce3di" path="res://Assets/Gaphics/enemies/fish.png" id="1_6nqui"]
+[ext_resource type="Script" path="res://Scripts/Enemies/enemy.gd" id="2_6op01"]
+
+[node name="Enemy" type="Sprite3D"]
+billboard = 1
+texture = ExtResource("1_6nqui")
+script = ExtResource("2_6op01")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
