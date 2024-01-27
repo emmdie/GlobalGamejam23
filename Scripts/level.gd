@@ -2,7 +2,13 @@ extends Node3D
 
 var enemies_left = 0
 
+var gong_player = AudioStreamPlayer3D.new()
+
+
 func _ready():
+	gong_player.stream = load("res://Assets/Sounds/gong.wav")
+	gong_player.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(gong_player)
 	for enemy in $Enemies.get_children():
 		enemies_left += 1
 		enemy.enemy_died.connect(enemy_died)
@@ -21,6 +27,7 @@ func pause_game():
 	get_tree().paused = true
 
 func level_won():
+	gong_player.play()
 	await $Player.fade_to_wheat()
 	var level_won_screen = load(SceneList.level_won_screen).instantiate()
 	add_child(level_won_screen)
