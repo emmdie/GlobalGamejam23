@@ -29,6 +29,7 @@ var gravity = 32
 @onready var weaponSprite: WeaponSprite = get_node("HUD/Weapon")
 @onready var camera: Camera3D = get_node("Camera3D")
 @onready var hud = get_node("HUD")
+@onready var weaponCooldown: Timer = get_node("WeaponCooldown")
 
 func _ready():
 	add_to_group("players")
@@ -83,11 +84,15 @@ func _input(event):
 		hud.bump_crosshair()
 
 func _fire_weapon():
-	var collision: Dictionary = camera.shoot_ray()
-	if !collision.is_empty():
-		var bh = bulletHoleScene.instantiate()
-		get_parent().add_child(bh)
-		bh.place(collision.position, collision.normal)
+	if weaponCooldown.is_stopped():
+		weaponCooldown.start()
+		hud.play_weapon_fire()
+		camera.rumble(0.5,0.5)
+		var collision: Dictionary = camera.shoot_ray()
+		if !collision.is_empty():
+			var bh = bulletHoleScene.instantiate()
+			get_parent().add_child(bh)
+			bh.place(collision.position, collision.normal)
 
 
 func _on_coyote_timer_timeout():

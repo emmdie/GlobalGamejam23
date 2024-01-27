@@ -5,6 +5,9 @@ const SWAY_EFFECT = 0.06
 const SWAY_LERP = 0.05
 
 @export var y_limit := 90.0
+# TODO: add noise based shake
+@export var noise: FastNoiseLite
+
 @onready var player: Player = get_parent()
 @onready var original_cam_position = position
 
@@ -14,11 +17,13 @@ var _mouse_sensitivity: float = 0.0
 var _time: float
 var _current_recoil: float = 0.0
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_parent().ready
 	update_mouse_sensitivity()
 	y_limit = deg_to_rad(y_limit)
+
 
 func update_mouse_sensitivity():
 	_mouse_sensitivity = player.mouse_sensitivity / 1000
@@ -44,11 +49,7 @@ func _physics_process(delta: float) -> void:
 
 func _sway():
 	rotation.z = lerp(rotation.z, -clamp(player.input_dir.x, -SWAY_EFFECT, SWAY_EFFECT), SWAY_LERP)
-
-func rumble(x,y):
-	position.x = randf_range(position.x-x, position.x+x)
-	position.y = randf_range(position.y-y, position.y+y)
-
+	
 func _reset_cam():
 	position = lerp(position, original_cam_position, 0.2)
 

@@ -12,6 +12,9 @@ func _ready():
 func _process(delta):
 	pass
 
+func play_weapon_fire():
+	$HudAnimPlayer.play("weapon_fire")
+
 func bump_crosshair():
 	var t = create_tween()
 	t.tween_property(crosshair, "scale", Vector2(1.5,1.5), 0.05)
