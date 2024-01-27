@@ -65,12 +65,17 @@ text = "Levels"
 layout_mode = 2
 text = "test level"
 
+[node name="Level0Button" type="Button" parent="CenterContainer/HBoxContainer/LevelContainer"]
+layout_mode = 2
+text = "Level 0"
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.2, 0.2)
 
 [node name="Book" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+modulate = Color(0.729412, 0.729412, 0.729412, 1)
 offset_left = -78.0
 offset_top = -160.0
 offset_right = 872.0
@@ -120,3 +125,4 @@ texture = ExtResource("4_f3xgm")
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/RepoLinkButton" to="." method="_on_repo_link_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/TestLevelButton" to="." method="_on_test_level_button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/Level0Button" to="." method="_on_level_0_button_pressed"]
