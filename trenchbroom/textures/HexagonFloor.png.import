@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://quunv1wj0h71"
-path.s3tc="res://.godot/imported/gray.png-8a9a0fb90df29673deb8d888195f74c8.s3tc.ctex"
+uid="uid://cjqsskyvo3vfo"
+path.s3tc="res://.godot/imported/HexagonFloor.png-ac1ab687f31c88e6c28054732ecb9fc8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://trenchbroom/textures/dev/gray.png"
-dest_files=["res://.godot/imported/gray.png-8a9a0fb90df29673deb8d888195f74c8.s3tc.ctex"]
+source_file="res://trenchbroom/textures/HexagonFloor.png"
+dest_files=["res://.godot/imported/HexagonFloor.png-ac1ab687f31c88e6c28054732ecb9fc8.s3tc.ctex"]
 
 [params]
 
