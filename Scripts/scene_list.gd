@@ -1,11 +1,6 @@
 extends Node
 
+const title_screen = "res://Scenes/Ui/title_screen.tscn"
+const pause_screen = "res://Scenes/Ui/PauseScreen.tscn"
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+const test_level = "res://Scenes/Levels/test_level.tscn"
