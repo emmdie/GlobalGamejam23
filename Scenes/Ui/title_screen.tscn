@@ -45,6 +45,10 @@ text = "Credits
 layout_mode = 2
 text = "Source Code"
 
+[node name="ExitButton" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "made with <3 for
@@ -84,7 +88,7 @@ text = "Unser Cooler
 Titel"
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.8, 0.8)
+motion_scale = Vector2(0.65, 0.65)
 
 [node name="EyeTexture" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
 offset_left = -104.0
@@ -114,4 +118,5 @@ texture = ExtResource("4_f3xgm")
 
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/RepoLinkButton" to="." method="_on_repo_link_button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/TestLevelButton" to="." method="_on_test_level_button_pressed"]

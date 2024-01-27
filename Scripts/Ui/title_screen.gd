@@ -18,3 +18,6 @@ func load_level(level_scene):
 	
 func _on_test_level_button_pressed():
 	load_level(SceneList.test_level)
+
+func _on_exit_button_pressed():
+	get_tree().quit()

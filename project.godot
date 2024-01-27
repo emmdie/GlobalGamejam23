@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="GlobalGameJam23"
+config/description="A game shooter about adding smiles to historic public domain Characters. Made for GlobalGameJam 2023 in Dresden with love"
 run/main_scene="res://Scenes/Ui/title_screen.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [autoload]
 
