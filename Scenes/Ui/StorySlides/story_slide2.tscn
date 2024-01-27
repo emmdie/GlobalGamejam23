@@ -55,7 +55,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 24
 text = "That was until the council of wizard cats convened... 
-Eager to push everyone into madness and misery, they casted a spell so evil, it is almost  impossible to describe.
+Eager to push everyone into madness and misery, they casted a spell so evil, it is almost  impossible to describe. The \"fair use firestorm\".
 Damn you, wizard cats!"
 
 [node name="CharacterTimer" type="Timer" parent="."]
@@ -80,3 +80,4 @@ grow_vertical = 0
 text = "Continue"
 
 [connection signal="timeout" from="CharacterTimer" to="." method="_on_character_timer_timeout"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

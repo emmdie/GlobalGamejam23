@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxk27vl1b7w7c"]
+[gd_scene load_steps=7 format=3 uid="uid://dxk27vl1b7w7c"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/title_screen.gd" id="1_23ck3"]
 [ext_resource type="Texture2D" uid="uid://c5un66qxlutqa" path="res://Assets/Gaphics/Ui/TitleScreenParallax/Book.jpg" id="2_22240"]
 [ext_resource type="Texture2D" uid="uid://d0ictcliicru4" path="res://Assets/Gaphics/Ui/TitleScreenParallax/scaryAsianPainting.png" id="2_jak1b"]
 [ext_resource type="Texture2D" uid="uid://bfyixck3fenir" path="res://Assets/Gaphics/Ui/TitleScreenParallax/Eye.png" id="3_3mm4n"]
 [ext_resource type="Texture2D" uid="uid://dtrju58dag5xi" path="res://Assets/Gaphics/Ui/TitleScreenParallax/NakedShieldGuyWithSmile.png" id="4_f3xgm"]
+[ext_resource type="PackedScene" uid="uid://dep85tq0bgthg" path="res://Scenes/Ui/StorySlides/animated_animal.tscn" id="6_jsla4"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -56,6 +57,11 @@ globalGameJam"
 
 [node name="LevelContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
+
+[node name="IntroButton" type="Button" parent="CenterContainer/HBoxContainer/LevelContainer"]
+layout_mode = 2
+text = "Opening
+Cinematic"
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer/LevelContainer"]
 layout_mode = 2
@@ -135,9 +141,19 @@ text = "Contains
 Medival
 Nudity!"
 
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="AnimatedAnimal" parent="ParallaxBackground/ParallaxLayer4" instance=ExtResource("6_jsla4")]
+offset_left = 208.0
+offset_top = 502.0
+offset_right = 208.0
+offset_bottom = 502.0
+scale = Vector2(0.3, 0.3)
+
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/RepoLinkButton" to="." method="_on_repo_link_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/IntroButton" to="." method="_on_intro_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/TestLevelButton" to="." method="_on_test_level_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/Level0Button" to="." method="_on_level_0_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/Level1Button" to="." method="_on_level_1_button_pressed"]

@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwv2h47krourw"]
+[gd_scene load_steps=9 format=3 uid="uid://cimf8ppi1dws5"]
 
-[ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_njy18"]
-[ext_resource type="Texture2D" uid="uid://df4ie7yk8gcve" path="res://Assets/Gaphics/Ui/StorySlides/AnimalDrawing.jpg" id="2_fmjt2"]
-[ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="3_5wbll"]
-[ext_resource type="Texture2D" uid="uid://2kq8v050jqof" path="res://Assets/Gaphics/Ui/StorySlides/monsters/CyclopsHead.png" id="3_xrmvx"]
-[ext_resource type="Texture2D" uid="uid://w5f2w22q3r5c" path="res://Assets/Gaphics/Ui/StorySlides/monsters/cyclopsBottom.png" id="4_p8ric"]
+[ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_6q8uw"]
+[ext_resource type="Texture2D" uid="uid://df4ie7yk8gcve" path="res://Assets/Gaphics/Ui/StorySlides/AnimalDrawing.jpg" id="2_4q4fm"]
+[ext_resource type="Texture2D" uid="uid://2kq8v050jqof" path="res://Assets/Gaphics/Ui/StorySlides/monsters/CyclopsHead.png" id="3_frbjt"]
+[ext_resource type="Texture2D" uid="uid://w5f2w22q3r5c" path="res://Assets/Gaphics/Ui/StorySlides/monsters/cyclopsBottom.png" id="4_skkbt"]
+[ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="5_ngbav"]
 
 [sub_resource type="Animation" id="Animation_6m27b"]
 length = 0.001
@@ -74,7 +74,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_njy18")
+script = ExtResource("1_6q8uw")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -92,7 +92,7 @@ offset_bottom = 837.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_fmjt2")
+texture = ExtResource("2_4q4fm")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.05, 0.05)
@@ -124,7 +124,7 @@ offset_right = 636.0
 offset_bottom = 677.0
 rotation = 0.174533
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_xrmvx")
+texture = ExtResource("3_frbjt")
 
 [node name="Bottom" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3/AnimatedAnimal"]
 layout_mode = 2
@@ -133,7 +133,7 @@ offset_top = 114.0
 offset_right = 1470.0
 offset_bottom = 2207.0
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_p8ric")
+texture = ExtResource("4_skkbt")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.2, 0.2)
@@ -155,7 +155,7 @@ wait_time = 0.04
 autostart = true
 
 [node name="keyBoardSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_5wbll")
+stream = ExtResource("5_ngbav")
 volume_db = -16.865
 
 [node name="NextButton" type="Button" parent="."]

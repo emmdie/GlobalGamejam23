@@ -1,0 +1,213 @@
+[gd_scene load_steps=12 format=3 uid="uid://cs1ywtna65adc"]
+
+[ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_b5nkt"]
+[ext_resource type="Texture2D" uid="uid://doe78xmsjtey4" path="res://Assets/Gaphics/Ui/StorySlides/nothernLights.jpeg" id="2_yh200"]
+[ext_resource type="Texture2D" uid="uid://ghnk7err255u" path="res://Assets/Gaphics/enemies/smiles/smile2.png" id="3_ipxu6"]
+[ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="4_0glca"]
+[ext_resource type="Texture2D" uid="uid://b01rneg47xioj" path="res://Assets/Gaphics/enemies/smiles/smile3.png" id="4_ou6ys"]
+[ext_resource type="Texture2D" uid="uid://b8t3wtlus483p" path="res://Assets/Gaphics/enemies/smiles/smile5.png" id="5_bwf5w"]
+[ext_resource type="Texture2D" uid="uid://ct15ox3qh5l30" path="res://Assets/Gaphics/enemies/smiles/smile1.png" id="6_huwq0"]
+[ext_resource type="Texture2D" uid="uid://dm7rum40ikt44" path="res://Assets/Gaphics/enemies/smiles/smile4.png" id="8_ephb6"]
+[ext_resource type="Texture2D" uid="uid://buhmuq7xfusy1" path="res://Assets/Gaphics/enemies/persianDemon.png" id="8_vl1ub"]
+[ext_resource type="Texture2D" uid="uid://cugnylftce3di" path="res://Assets/Gaphics/enemies/fish.png" id="9_p1w7o"]
+[ext_resource type="Texture2D" uid="uid://64kl1dxwrt16" path="res://Assets/Gaphics/enemies/ShieldGuy.png" id="10_7ind2"]
+
+[node name="StorySlide1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b5nkt")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Background" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -150.0
+offset_right = 1461.0
+offset_bottom = 697.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.903295, 1.10787)
+texture = ExtResource("2_yh200")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+
+[node name="tape" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+offset_left = 604.0
+offset_top = -25.0
+offset_right = 1175.0
+offset_bottom = 265.0
+rotation = -0.245613
+scale = Vector2(0.389592, 0.481947)
+texture = ExtResource("3_ipxu6")
+
+[node name="tape2" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+offset_left = 670.0
+offset_top = 338.0
+offset_right = 1241.0
+offset_bottom = 628.0
+rotation = -0.245613
+scale = Vector2(0.389592, 0.481947)
+texture = ExtResource("4_ou6ys")
+
+[node name="tape4" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+offset_left = 61.0001
+offset_top = 19.0
+offset_right = 632.0
+offset_bottom = 309.0
+rotation = -0.109971
+scale = Vector2(0.389592, 0.481947)
+texture = ExtResource("5_bwf5w")
+
+[node name="tape3" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+offset_left = 54.0
+offset_top = 164.0
+offset_right = 625.0
+offset_bottom = 454.0
+rotation = 0.249152
+scale = Vector2(-0.236005, 0.231147)
+texture = ExtResource("6_huwq0")
+
+[node name="tape7" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+offset_left = 972.0
+offset_top = 112.0
+offset_right = 1543.0
+offset_bottom = 402.0
+rotation = -0.291269
+scale = Vector2(0.389592, 0.481947)
+texture = ExtResource("8_ephb6")
+
+[node name="Demon" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+offset_left = 349.0
+offset_top = -10.0
+offset_right = 861.0
+offset_bottom = 1014.0
+rotation = -0.0026507
+scale = Vector2(0.72283, 0.746693)
+texture = ExtResource("8_vl1ub")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Fish" type="TextureRect" parent="ParallaxBackground/ParallaxLayer5"]
+offset_left = 95.0
+offset_top = 25.0
+offset_right = 607.0
+offset_bottom = 1049.0
+rotation = -0.0026507
+scale = Vector2(0.72283, 0.746693)
+texture = ExtResource("9_p1w7o")
+
+[node name="Shield" type="TextureRect" parent="ParallaxBackground/ParallaxLayer5"]
+offset_left = 803.0
+offset_top = -13.0
+offset_right = 1315.0
+offset_bottom = 1011.0
+rotation = -0.0026507
+scale = Vector2(0.72283, 0.746693)
+texture = ExtResource("10_7ind2")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="SlideTextDisplay" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 200.0
+offset_top = 96.0
+offset_right = 913.0
+offset_bottom = 296.0
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 23
+text = "Can you fello player aid DOMAIN_DEFENDATRON in his Open Canvas Combat? The mission is simple: Shoot as many Tape-Smiles as possible back onto these Sad faces. 
+So turn on the aimbot - today we're doing headshots!"
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+
+[node name="tape3" type="TextureRect" parent="ParallaxBackground/ParallaxLayer4"]
+offset_left = -58.9999
+offset_top = 568.0
+offset_right = 512.0
+offset_bottom = 858.0
+rotation = 0.224681
+scale = Vector2(0.260726, 0.318542)
+texture = ExtResource("3_ipxu6")
+
+[node name="tape2" type="TextureRect" parent="ParallaxBackground/ParallaxLayer4"]
+offset_left = 1062.0
+offset_top = 78.0
+offset_right = 1633.0
+offset_bottom = 368.0
+rotation = 0.830392
+scale = Vector2(-0.223546, -0.245133)
+texture = ExtResource("6_huwq0")
+
+[node name="tape4" type="TextureRect" parent="ParallaxBackground/ParallaxLayer4"]
+offset_left = 946.0
+offset_top = 425.0
+offset_right = 1517.0
+offset_bottom = 715.0
+rotation = -0.343158
+scale = Vector2(0.389592, 0.481947)
+texture = ExtResource("6_huwq0")
+
+[node name="tape5" type="TextureRect" parent="ParallaxBackground/ParallaxLayer4"]
+offset_left = 4.0
+offset_top = 297.0
+offset_right = 575.0
+offset_bottom = 587.0
+rotation = 0.432435
+scale = Vector2(0.389592, 0.481947)
+texture = ExtResource("4_ou6ys")
+
+[node name="tape8" type="TextureRect" parent="ParallaxBackground/ParallaxLayer4"]
+offset_left = 4.0
+offset_top = 297.0
+offset_right = 575.0
+offset_bottom = 587.0
+rotation = 0.432435
+scale = Vector2(0.389592, 0.481947)
+texture = ExtResource("8_ephb6")
+
+[node name="tape6" type="TextureRect" parent="ParallaxBackground/ParallaxLayer4"]
+offset_left = 763.0
+offset_top = 639.0
+offset_right = 1334.0
+offset_bottom = 929.0
+rotation = -0.109971
+scale = Vector2(0.389592, 0.481947)
+texture = ExtResource("5_bwf5w")
+
+[node name="CharacterTimer" type="Timer" parent="."]
+wait_time = 0.04
+autostart = true
+
+[node name="keyBoardSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0glca")
+volume_db = -16.865
+
+[node name="NextButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Continue"
+
+[connection signal="timeout" from="CharacterTimer" to="." method="_on_character_timer_timeout"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
