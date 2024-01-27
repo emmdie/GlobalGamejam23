@@ -4,3 +4,4 @@
 - Scary monster: [Hokusai’s Ghost Stories (ca. 1830)](https://publicdomainreview.org/collection/hokusai-s-ghost-stories-ca-1830/)
 - Big eye: [Odilon Redon’s À Edgar Poe (1882) ](https://publicdomainreview.org/collection/odilon-redon-a-edgar-poe/)
 - Book Texture: [16th-Century Pattern Book for Scribes](https://publicdomainreview.org/collection/16th-century-pattern-book-for-scribes/)
+- [Illustrations from the Lights of Canopus (1847)](Illustrations from the Lights of Canopus (1847) )
