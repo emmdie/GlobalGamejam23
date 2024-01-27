@@ -39,15 +39,13 @@ func _ready():
 func hit(dmg, normal):
 	if dead: return
 	$Sprite/EnemySprite/AnimationPlayer.stop()
-	dead = true
+	die()
 	var smileTex = smiles[randi_range(0, smiles.size()-1)]
 	$Sprite/EnemySprite/Smile.texture = smileTex
 	push_vel = -velocity.normalized() * 240
 	$Sprite/EnemySprite/Smile.visible = true
 	$SFX/Hit.playQueue()
 	health -= dmg
-	if health <= 0:
-		die()
 	await get_tree().create_timer(0.2).timeout
 	$SFX/Laugth.playQueue()
 
