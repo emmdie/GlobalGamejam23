@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://dpur3q1vd84w1"
+path="res://.godot/imported/ProtoMap.map-613edf1fe43dfdff37fa9625f20fee08.tres"
+
+[deps]
+
+source_file="res://trenchbroom/mapsource/ProtoMap.map"
+dest_files=["res://.godot/imported/ProtoMap.map-613edf1fe43dfdff37fa9625f20fee08.tres"]
+
+[params]
+

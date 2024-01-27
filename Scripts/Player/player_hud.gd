@@ -12,6 +12,11 @@ func _ready():
 func _process(delta):
 	pass
 
+func flash_overlay(color: Color):
+	var t = create_tween()
+	t.tween_property($ColorRect, "color", color, 0.02)
+	t.tween_property($ColorRect, "color", Color.TRANSPARENT, 0.1)
+
 func play_weapon_fire():
 	$HudAnimPlayer.play("weapon_fire")
 

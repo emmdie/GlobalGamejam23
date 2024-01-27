@@ -59,6 +59,7 @@ func _process(delta: float):
 func _can_jump():
 	return is_on_floor() || in_coyote_time
 
+
 func _calculate_velocity(dir: Vector3, delta: float):
 	var yvel = velocity.y
 	var firction = FRICTION
@@ -78,9 +79,11 @@ func _calculate_velocity(dir: Vector3, delta: float):
 	
 	velocity.y = yvel
 
+
 func _input(event):
 	if event.is_action_pressed("fire"):
 		_fire_weapon()
+
 
 func _fire_weapon():
 	if weaponCooldown.is_stopped():
@@ -91,12 +94,18 @@ func _fire_weapon():
 		var collision: Dictionary = camera.shoot_ray()
 		if !collision.is_empty():
 			if collision.collider is EnemyHitbox:
-				collision.collider.hit(1)
+				collision.collider.hit(1,collision.normal)
 				return
 			var bh = bulletHoleScene.instantiate()
 			get_parent().add_child(bh)
 			bh.place(collision.position, collision.normal)
 
+func hit(normal):
+	if $HurtTimer.is_stopped():
+		normal.y = 0
+		velocity = -normal * 32
+		$HurtTimer.start()
+		$HUD.flash_overlay(Color.RED)
 
 func _on_coyote_timer_timeout():
 	in_coyote_time = false
