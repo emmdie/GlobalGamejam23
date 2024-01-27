@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://xd5477qsqqjl"]
+[gd_scene load_steps=29 format=3 uid="uid://xd5477qsqqjl"]
 
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_x3crc"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="2_0fmo1"]
@@ -99,6 +99,10 @@ points = PackedVector3Array(-40, 16, -32.5, -40, 4, -32.5, 4, 4, -32.5, 4, 16, -
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8t1d1"]
 points = PackedVector3Array(-40.5, 16, -32, -40.5, 4, -32, -40, 4, -32, -40, 16, -32, -40.5, 16, -4.5, -40.5, 4, -4.5, -40, 4, -4.5, -40, 16, -4.5)
 
+[sub_resource type="Environment" id="Environment_kk4ph"]
+fog_enabled = true
+fog_light_color = Color(0.698039, 0.490196, 0.443137, 1)
+
 [node name="Level" type="Node3D"]
 
 [node name="QodotMap" type="Node3D" parent="."]
@@ -171,3 +175,6 @@ shape = SubResource("ConvexPolygonShape3D_8t1d1")
 
 [node name="Player" parent="." instance=ExtResource("5_3dhv8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65916, 5.91707, 12.6296)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kk4ph")
