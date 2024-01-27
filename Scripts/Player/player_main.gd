@@ -81,10 +81,10 @@ func _calculate_velocity(dir: Vector3, delta: float):
 func _input(event):
 	if event.is_action_pressed("fire"):
 		_fire_weapon()
-		hud.bump_crosshair()
 
 func _fire_weapon():
 	if weaponCooldown.is_stopped():
+		hud.bump_crosshair()
 		weaponCooldown.start()
 		hud.play_weapon_fire()
 		var collision: Dictionary = camera.shoot_ray()
