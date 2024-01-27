@@ -28,6 +28,17 @@ func _ready() -> void:
 func update_mouse_sensitivity():
 	_mouse_sensitivity = player.mouse_sensitivity / 1000
 
+func shake():
+	var original_pos = position
+	var shake_offset = 0.07
+	var t = create_tween()
+	t.set_loops(3)
+	t.tween_property(self, "position", Vector3(
+		randf_range(original_pos.x-shake_offset, original_pos.x+shake_offset),
+		randf_range(original_pos.y-shake_offset, original_pos.y+shake_offset),
+		0),
+	0.02).set_trans(Tween.TRANS_ELASTIC)
+	t.chain().tween_property(self, "position", original_pos, 0.04)
 
 func shoot_ray() -> Dictionary:
 	$RayCast3D.force_raycast_update()
@@ -41,13 +52,15 @@ func shoot_ray() -> Dictionary:
 
 # Called when there is an input event
 func _input(event: InputEvent) -> void:
+	if player.dead: return
 	# Mouse look (only if the mouse is captured).
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		mouse_axis = event.relative
 		camera_rotation()
 
 # Called every physics tick. 'delta' is constant
-func _physics_process(delta: float) -> void:	
+func _physics_process(delta: float) -> void:
+	if player.dead: return
 	_reset_cam()
 	_sway()
 

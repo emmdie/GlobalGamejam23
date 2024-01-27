@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://baeoasb40ibv4" path="res://Scenes/Player/Player.tscn" id="6_awnlg"]
 [ext_resource type="PackedScene" uid="uid://cc7t0rn0po8th" path="res://Scenes/Enemies/enemy.tscn" id="7_5xw4s"]
 [ext_resource type="Texture2D" uid="uid://dec85gm4xw461" path="res://trenchbroom/textures/Ceiling.png" id="10_53gvy"]
-[ext_resource type="PackedScene" path="res://Scenes/Enemies/fish_enemy.tscn" id="10_vuuf5"]
-[ext_resource type="PackedScene" path="res://Scenes/Enemies/persian_demon.tscn" id="11_xnbws"]
+[ext_resource type="PackedScene" uid="uid://vdvibfyxn335" path="res://Scenes/Enemies/fish_enemy.tscn" id="10_vuuf5"]
+[ext_resource type="PackedScene" uid="uid://bl71di7yb1ya8" path="res://Scenes/Enemies/persian_demon.tscn" id="11_xnbws"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_fkg7h"]
 vertices = PackedVector3Array(-21, 4.5, -5, -20.75, 4.5, -31.25, -39.25, 4.5, -31.25, -39.25, 4.5, -5, -19.25, 4.5, -4.75, -19.25, 4, -3, -13, 4, -3, -13, 4.5, -4.75, -21, 4.5, -5, -19.25, 4.5, -4.75, -13, 4.5, -4.75, -11.25, 4.5, -5, -11.5, 4.5, -31.25, -20.75, 4.5, -31.25, -11.25, 4.5, -5, 3.5, 4.5, -5, 3.5, 4.5, -31.25, -11.5, 4.5, -31.25, -20, 17, -4, -20, 17, 7.75, -12.25, 17, 7.75, -12.25, 17, -4, -11.25, 1, 8.25, -12.25, 1, 8.75, -12.25, 1, 15.5, 3.5, 1, 15.5, 3.5, 1, -3.25, -11.25, 1, -3.25, -11.25, 1, 8.25, 3.5, 1, 15.5, -11.75, 13, 8.75, -13.25, 13, 8.75, -13, 13, 16, -11.25, 13, 8.25, -11.75, 13, 8.75, -13, 13, 16, 4, 13, 16, 4, 13, -3.25, -11.25, 13, -3.25, -11.25, 13, 8.25, 4, 13, 16, -13, 1.25, 7, -13, 4, -3, -19.25, 4, -3, -19.25, 1.25, 7.25, -13, 1, 8.5, -13, 1.25, 7, -19.25, 1.25, 7.25, -12.25, 1, 15.5, -12.25, 1, 8.75, -13, 1, 8.5, -19.25, 1.25, 7.25, -19.25, 1, 15.5, -13.25, 13, 8.75, -19.25, 13, 8.75, -19.25, 13, 16, -13, 13, 16)

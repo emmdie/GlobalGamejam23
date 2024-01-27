@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dcm2siuq7qiu3" path="res://Assets/Gaphics/enemies/NakedShieldGuy.png" id="2_27l2k"]
 
 [node name="NakedShieldEnemy" instance=ExtResource("1_afi7e")]
+sense_radius = 50.0
 
 [node name="EnemySprite" parent="Sprite" index="0"]
 offset = Vector2(-60, 500)

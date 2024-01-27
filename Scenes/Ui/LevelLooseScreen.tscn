@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://empfnko4y5o1"]
+[gd_scene load_steps=3 format=3 uid="uid://1im218khd3em"]
 
-[ext_resource type="Script" path="res://Scripts/Ui/LevelWonScreen.gd" id="1_sgukv"]
-[ext_resource type="Texture2D" uid="uid://ooly14eki4ns" path="res://Assets/Gaphics/Ui/win.png" id="2_2615o"]
+[ext_resource type="Script" path="res://Scripts/Ui/LevelWonScreen.gd" id="1_8ac3q"]
+[ext_resource type="Texture2D" uid="uid://cfr70rqxl6uax" path="res://Assets/Gaphics/Ui/deaht.png" id="2_1lt68"]
 
 [node name="LevelWonScreen" type="Control"]
 process_mode = 3
@@ -11,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_sgukv")
+script = ExtResource("1_8ac3q")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -23,7 +23,7 @@ offset_top = 27.0
 offset_right = 400.0
 offset_bottom = 443.0
 grow_horizontal = 2
-texture = ExtResource("2_2615o")
+texture = ExtResource("2_1lt68")
 
 [node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 1
@@ -35,38 +35,38 @@ offset_top = 1.0
 offset_right = 263.0
 offset_bottom = 176.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.368627, 0.415686, 0.568627, 1)
+theme_override_colors/font_color = Color(0.623529, 0.329412, 0.239216, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 10
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 128
-text = "You Won"
+text = "You Died"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 offset_left = -26.5
-offset_top = 164.5
+offset_top = -160.0
 offset_right = 26.5
-offset_bottom = 195.5
+offset_bottom = -94.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="NextLevelButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Retry" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Next Level"
+text = "Retry"
 
 [node name="MainMenuButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Menu"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

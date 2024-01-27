@@ -2,3 +2,4 @@
 .godot/
 trenchbroom/mapsource/autosave/
 .DS_Store
+build/

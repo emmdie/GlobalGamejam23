@@ -23,6 +23,8 @@ signal enemy_died
 
 @export var smiles : Array[CompressedTexture2D]
 
+
+
 func _ready():
 	free_timer.one_shot = true
 	add_to_group("enemies")
@@ -36,9 +38,22 @@ func _ready():
 	# Make sure to not await during _ready.
 	call_deferred("actor_setup")
 
+func shake():
+	var original_pos = $Sprite.position
+	var shake_offset = 0.2
+	var t = create_tween()
+	t.set_loops(15)
+	t.tween_property($Sprite, "position", Vector3(
+		randf_range(original_pos.x-shake_offset, original_pos.x+shake_offset),
+		randf_range(original_pos.y-shake_offset, original_pos.y+shake_offset),
+		0),
+	0.06).set_trans(Tween.TRANS_ELASTIC)
+	t.chain().tween_property($Sprite, "position", original_pos, 0.07)
+	
 func hit(dmg, normal):
 	if dead: return
 	$Sprite/EnemySprite/AnimationPlayer.stop()
+	shake()
 	die()
 	var smileTex = smiles[randi_range(0, smiles.size()-1)]
 	$Sprite/EnemySprite/Smile.texture = smileTex
