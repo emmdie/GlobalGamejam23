@@ -1,4 +1,8 @@
 extends Control
+@onready var parallax = $ParallaxBackground
+
+func _process(delta):
+	parallax.scroll_offset = get_global_mouse_position()*0.14
 
 func _on_repo_link_button_pressed():
 	OS.shell_open("https://github.com/emmdie/GlobalGamejam23")

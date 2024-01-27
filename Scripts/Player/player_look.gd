@@ -30,10 +30,14 @@ func update_mouse_sensitivity():
 
 
 func shoot_ray() -> Dictionary:
-	var space = get_world_3d().direct_space_state
-	var query = PhysicsRayQueryParameters3D.create(global_position,global_position - global_transform.basis.z * 100)
-	return space.intersect_ray(query)
-	
+	$RayCast3D.force_raycast_update()
+	if $RayCast3D.is_colliding():
+		return {
+			collider = $RayCast3D.get_collider(),
+			position = $RayCast3D.get_collision_point(),
+			normal = $RayCast3D.get_collision_normal()
+		}
+	return {}
 
 # Called when there is an input event
 func _input(event: InputEvent) -> void:

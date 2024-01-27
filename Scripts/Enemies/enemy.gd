@@ -1,5 +1,7 @@
 extends Sprite3D
 
+class_name EnemySprite
+
 @export var movement_speed = 100
 
 var direction
