@@ -6,6 +6,7 @@ var gong_player = AudioStreamPlayer3D.new()
 
 
 func _ready():
+	$Player.player_died.connect(player_died)
 	gong_player.stream = load("res://Assets/Sounds/gong.wav")
 	gong_player.process_mode = Node.PROCESS_MODE_ALWAYS
 	add_child(gong_player)
@@ -39,6 +40,12 @@ func enemy_died():
 	enemies_left -= 1
 	if enemies_left <= 0:
 		level_won()
+
+func player_died():
+	var level_loose_screen = load(SceneList.level_loose_screen).instantiate()
+	add_child(level_loose_screen)
+	level_loose_screen.main_menu.connect(change_to_main_menu)
+	get_tree().paused = true
 
 func change_to_main_menu():
 	var main_menu = load(SceneList.title_screen).instantiate()
