@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5vwyi1e335h7"]
+
+[ext_resource type="PackedScene" uid="uid://cc7t0rn0po8th" path="res://Scenes/Enemies/enemy.tscn" id="1_3gs0f"]
+[ext_resource type="Texture2D" uid="uid://64kl1dxwrt16" path="res://Assets/Gaphics/enemies/ShieldGuy.png" id="2_wsa4n"]
+
+[node name="ShieldGuyWithTurban" instance=ExtResource("1_3gs0f")]
+
+[node name="EnemySprite" parent="Sprite" index="0"]
+offset = Vector2(-30, 460)
+texture = ExtResource("2_wsa4n")

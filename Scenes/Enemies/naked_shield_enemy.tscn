@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3j87sm42c8ww"]
+
+[ext_resource type="PackedScene" uid="uid://cc7t0rn0po8th" path="res://Scenes/Enemies/enemy.tscn" id="1_afi7e"]
+[ext_resource type="Texture2D" uid="uid://dcm2siuq7qiu3" path="res://Assets/Gaphics/enemies/NakedShieldGuy.png" id="2_27l2k"]
+
+[node name="NakedShieldEnemy" instance=ExtResource("1_afi7e")]
+
+[node name="EnemySprite" parent="Sprite" index="0"]
+offset = Vector2(-60, 500)
+texture = ExtResource("2_27l2k")
