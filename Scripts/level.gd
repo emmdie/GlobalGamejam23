@@ -1,11 +1,12 @@
 extends Node3D
 
-var enemies_left = 0
+@export var next_stage: PackedScene
 
+var enemies_left = 0
 var gong_player = AudioStreamPlayer3D.new()
 
-
 func _ready():
+	get_tree().paused = false
 	$Player.player_died.connect(player_died)
 	gong_player.stream = load("res://Assets/Sounds/gong.wav")
 	gong_player.process_mode = Node.PROCESS_MODE_ALWAYS
@@ -31,6 +32,7 @@ func level_won():
 	gong_player.play()
 	await $Player.fade_to_wheat()
 	var level_won_screen = load(SceneList.level_won_screen).instantiate()
+	level_won_screen.next_level = next_stage
 	add_child(level_won_screen)
 	level_won_screen.main_menu.connect(change_to_main_menu)
 	get_tree().paused = true
