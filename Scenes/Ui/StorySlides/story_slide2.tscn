@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg1rvajwm8kf7"]
+
+[ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_67fva"]
+[ext_resource type="Texture2D" uid="uid://drl16m8mlgadi" path="res://Assets/Gaphics/Ui/StorySlides/Entretiens_sur_la_pluralité_des_[...]Fontenelle_Bernard_btv1b86207579_40-edit.jpeg" id="2_ilrkp"]
+[ext_resource type="PackedScene" uid="uid://dep85tq0bgthg" path="res://Scenes/Ui/StorySlides/animated_animal.tscn" id="3_1lvtr"]
+[ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="5_wdysg"]
+
+[node name="StorySlide2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_67fva")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.05, 0.05)
+
+[node name="Background" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -213.0
+offset_right = 1742.0
+offset_bottom = 1746.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_ilrkp")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.05, 0.05)
+
+[node name="AnimatedAnimal" parent="ParallaxBackground/ParallaxLayer3" instance=ExtResource("3_1lvtr")]
+offset_left = 883.0
+offset_top = 396.0
+offset_right = 883.0
+offset_bottom = 396.0
+scale = Vector2(0.4, 0.4)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="SlideTextDisplay" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 83.0
+offset_top = 161.0
+offset_right = 854.0
+offset_bottom = 371.0
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "That was until the council of wizard cats convened... 
+Eager to push everyone into madness and misery, they casted a spell so evil, it is almost  impossible to describe.
+Damn you, wizard cats!"
+
+[node name="CharacterTimer" type="Timer" parent="."]
+wait_time = 0.04
+autostart = true
+
+[node name="keyBoardSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wdysg")
+volume_db = -16.865
+
+[node name="NextButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Continue"
+
+[connection signal="timeout" from="CharacterTimer" to="." method="_on_character_timer_timeout"]
