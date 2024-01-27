@@ -90,6 +90,9 @@ func _fire_weapon():
 		hud.play_weapon_fire()
 		var collision: Dictionary = camera.shoot_ray()
 		if !collision.is_empty():
+			if collision.collider is EnemyHitbox:
+				collision.collider.hit(1)
+				return
 			var bh = bulletHoleScene.instantiate()
 			get_parent().add_child(bh)
 			bh.place(collision.position, collision.normal)
