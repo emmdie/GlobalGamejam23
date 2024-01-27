@@ -1,5 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://xd5477qsqqjl"]
+[gd_scene load_steps=32 format=3 uid="uid://xd5477qsqqjl"]
 
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_36eyj"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_x3crc"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="2_0fmo1"]
 [ext_resource type="Texture2D" uid="uid://d0nfpe6070jae" path="res://trenchbroom/textures/dev/blue.png" id="3_o0ots"]
@@ -109,6 +110,7 @@ fog_enabled = true
 fog_light_color = Color(0.698039, 0.490196, 0.443137, 1)
 
 [node name="Level" type="Node3D"]
+script = ExtResource("1_36eyj")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_fkg7h")
@@ -187,5 +189,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65916, 5.91707, 12.6296)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kk4ph")
 
-[node name="Enemy" parent="." instance=ExtResource("6_k0eq3")]
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("6_k0eq3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8039, 4, -10.5749)
