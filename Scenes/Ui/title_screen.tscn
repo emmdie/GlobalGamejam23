@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxk27vl1b7w7c"]
+[gd_scene load_steps=6 format=3 uid="uid://dxk27vl1b7w7c"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/title_screen.gd" id="1_23ck3"]
+[ext_resource type="Texture2D" uid="uid://c5un66qxlutqa" path="res://Assets/Gaphics/Ui/TitleScreenParallax/Book.jpg" id="2_22240"]
 [ext_resource type="Texture2D" uid="uid://d0ictcliicru4" path="res://Assets/Gaphics/Ui/TitleScreenParallax/scaryAsianPainting.png" id="2_jak1b"]
 [ext_resource type="Texture2D" uid="uid://bfyixck3fenir" path="res://Assets/Gaphics/Ui/TitleScreenParallax/Eye.png" id="3_3mm4n"]
 [ext_resource type="Texture2D" uid="uid://dtrju58dag5xi" path="res://Assets/Gaphics/Ui/TitleScreenParallax/NakedShieldGuyWithSmile.png" id="4_f3xgm"]
@@ -63,7 +64,15 @@ text = "test level"
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.5, 0.5)
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Book" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+offset_left = -78.0
+offset_top = -160.0
+offset_right = 872.0
+offset_bottom = 545.0
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("2_22240")
 
 [node name="Titel" type="Label" parent="ParallaxBackground/ParallaxLayer3"]
 offset_left = 296.0
@@ -78,10 +87,10 @@ Titel"
 motion_scale = Vector2(0.8, 0.8)
 
 [node name="EyeTexture" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
-offset_left = -66.0
-offset_top = 31.0
-offset_right = 472.0
-offset_bottom = 745.0
+offset_left = -104.0
+offset_top = 133.0
+offset_right = 434.0
+offset_bottom = 847.0
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_3mm4n")
 
