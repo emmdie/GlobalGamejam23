@@ -87,7 +87,6 @@ func _fire_weapon():
 	if weaponCooldown.is_stopped():
 		weaponCooldown.start()
 		hud.play_weapon_fire()
-		camera.rumble(0.5,0.5)
 		var collision: Dictionary = camera.shoot_ray()
 		if !collision.is_empty():
 			var bh = bulletHoleScene.instantiate()
