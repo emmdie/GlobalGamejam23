@@ -8,6 +8,18 @@ func _ready():
 		enemy.enemy_died.connect(enemy_died)
 	print("Enemy count: " + str(enemies_left))
 
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_ESCAPE:
+			pause_game()
+
+func pause_game():
+	var pause_screen = load(SceneList.pause_screen).instantiate()
+	add_child(pause_screen)
+	pause_screen.process_mode = PROCESS_MODE_ALWAYS
+	pause_screen.main_menu.connect(change_to_main_menu)
+	get_tree().paused = true
+
 func level_won():
 	var level_won_screen = load(SceneList.level_won_screen).instantiate()
 	add_child(level_won_screen)
