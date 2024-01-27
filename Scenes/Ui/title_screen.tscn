@@ -19,22 +19,38 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-text = "Play"
-
-[node name="CreditsButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Credits
 "
 
-[node name="RepoLinkButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="RepoLinkButton" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Source Code"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/RepoLinkButton" to="." method="_on_repo_link_button_pressed"]
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "made with <3 for
+globalGameJam"
+
+[node name="LevelContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/LevelContainer"]
+layout_mode = 2
+text = "Levels"
+
+[node name="TestLevelButton" type="Button" parent="CenterContainer/HBoxContainer/LevelContainer"]
+layout_mode = 2
+text = "test level"
+
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/RepoLinkButton" to="." method="_on_repo_link_button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/TestLevelButton" to="." method="_on_test_level_button_pressed"]

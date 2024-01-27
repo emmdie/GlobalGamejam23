@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Ui/title_screen.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SceneList="*res://Scripts/scene_list.gd"
+
 [display]
 
 window/stretch/mode="viewport"
