@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cc7t0rn0po8th"]
+[gd_scene load_steps=15 format=3 uid="uid://cc7t0rn0po8th"]
 
 [ext_resource type="Texture2D" uid="uid://cugnylftce3di" path="res://Assets/Gaphics/enemies/fish.png" id="1_6nqui"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_movement.gd" id="1_rona1"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy.gd" id="2_6op01"]
 [ext_resource type="Script" path="res://Scripts/Common/AudioCue3D.gd" id="4_lkemt"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_hitbox.gd" id="4_p7ax0"]
+[ext_resource type="Texture2D" uid="uid://ct15ox3qh5l30" path="res://Assets/Gaphics/enemies/smiles/smile1.png" id="5_3etag"]
 [ext_resource type="AudioStream" uid="uid://bld7u5xbmxkf2" path="res://Assets/Sounds/Enemy/laugth1.wav" id="5_agk75"]
 [ext_resource type="AudioStream" uid="uid://b7rvouf5or4n5" path="res://Assets/Sounds/Enemy/laugth2.wav" id="6_tattm"]
 [ext_resource type="AudioStream" uid="uid://dyh6msjo4ml4x" path="res://Assets/Sounds/Enemy/whip.wav" id="7_2sk7j"]
@@ -174,6 +175,14 @@ offset = Vector2(50, 460)
 billboard = 2
 texture = ExtResource("1_6nqui")
 script = ExtResource("2_6op01")
+
+[node name="Smile" type="Sprite3D" parent="Sprite/EnemySprite"]
+transform = Transform3D(0.272727, 0, 0, 0, 0.333333, 0, 0, 0, 0.3, 0, 6.55458, 0)
+visible = false
+billboard = 2
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("5_3etag")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/EnemySprite"]
 libraries = {

@@ -35,7 +35,11 @@ func _ready():
 	call_deferred("actor_setup")
 
 func hit(dmg, normal):
-	push_vel = -velocity.normalized() * 120
+	if dead: return
+	$Sprite/EnemySprite/AnimationPlayer.stop()
+	dead = true
+	push_vel = -velocity.normalized() * 240
+	$Sprite/EnemySprite/Smile.visible = true
 	$SFX/Hit.playQueue()
 	health -= dmg
 	if health <= 0:
