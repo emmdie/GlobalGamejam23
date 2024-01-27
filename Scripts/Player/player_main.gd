@@ -107,6 +107,7 @@ func _fire_weapon():
 
 func hit(normal):
 	if $HurtTimer.is_stopped():
+		camera.shake()
 		$SFX/Hurt.playQueue()
 		normal.y = 0
 		velocity = -normal * 32

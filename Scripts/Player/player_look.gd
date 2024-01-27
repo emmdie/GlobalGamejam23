@@ -28,6 +28,17 @@ func _ready() -> void:
 func update_mouse_sensitivity():
 	_mouse_sensitivity = player.mouse_sensitivity / 1000
 
+func shake():
+	var original_pos = position
+	var shake_offset = 0.07
+	var t = create_tween()
+	t.set_loops(3)
+	t.tween_property(self, "position", Vector3(
+		randf_range(original_pos.x-shake_offset, original_pos.x+shake_offset),
+		randf_range(original_pos.y-shake_offset, original_pos.y+shake_offset),
+		0),
+	0.02).set_trans(Tween.TRANS_ELASTIC)
+	t.chain().tween_property(self, "position", original_pos, 0.04)
 
 func shoot_ray() -> Dictionary:
 	$RayCast3D.force_raycast_update()
