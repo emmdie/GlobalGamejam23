@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc7t0rn0po8th"]
+[gd_scene load_steps=8 format=3 uid="uid://cc7t0rn0po8th"]
 
 [ext_resource type="Texture2D" uid="uid://cugnylftce3di" path="res://Assets/Gaphics/enemies/fish.png" id="1_6nqui"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy.gd" id="2_6op01"]
@@ -152,21 +152,30 @@ _data = {
 radius = 1.1
 height = 3.969
 
-[node name="Enemy" type="Sprite3D"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_442yj"]
+height = 5.297
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="Enemy" type="Sprite3D" parent="."]
 transform = Transform3D(1.1, 0, 0, 0, 0.9, 0, 0, 0, 1, 0, 0, 0)
 offset = Vector2(50, 460)
 billboard = 2
 texture = ExtResource("1_6nqui")
 script = ExtResource("2_6op01")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
 libraries = {
 "": SubResource("AnimationLibrary_3g7ju")
 }
 autoplay = "bounce"
 
-[node name="HitboxHead" type="Area3D" parent="."]
+[node name="HitboxHead" type="Area3D" parent="Enemy"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxHead"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/HitboxHead"]
 transform = Transform3D(-1, 0, 2.78142e-07, 0, 1, 0, -2.78142e-07, 0, -1, 0, 7.1, 0.2)
 shape = SubResource("CapsuleShape3D_ryu4y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+shape = SubResource("CylinderShape3D_442yj")
