@@ -22,4 +22,3 @@ func show_next_slide():
 		add_child(slide)
 		current_slide = slide
 		slide.next_slide.connect(show_next_slide)
-		
