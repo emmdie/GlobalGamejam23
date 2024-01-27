@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcm2siuq7qiu3"
-path="res://.godot/imported/NakedShieldGuy.png-0ee6c98c11c786877a5106c11f1a0090.ctex"
+uid="uid://dikg6s3bys1he"
+path="res://.godot/imported/Book.png-cdca96fcd9f94dff9763fac2ab7d054c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gaphics/enemies/NakedShieldGuy.png"
-dest_files=["res://.godot/imported/NakedShieldGuy.png-0ee6c98c11c786877a5106c11f1a0090.ctex"]
+source_file="res://Assets/Gaphics/Ui/PauseScreen/Book.png"
+dest_files=["res://.godot/imported/Book.png-cdca96fcd9f94dff9763fac2ab7d054c.ctex"]
 
 [params]
 
