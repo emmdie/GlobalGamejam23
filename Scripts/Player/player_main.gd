@@ -84,6 +84,7 @@ func _input(event):
 
 func _fire_weapon():
 	if weaponCooldown.is_stopped():
+		$SFX/AudioCue2D.playQueue()
 		hud.bump_crosshair()
 		weaponCooldown.start()
 		hud.play_weapon_fire()
