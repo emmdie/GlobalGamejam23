@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxk27vl1b7w7c"]
+[gd_scene load_steps=5 format=3 uid="uid://dxk27vl1b7w7c"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/title_screen.gd" id="1_23ck3"]
+[ext_resource type="Texture2D" uid="uid://d0ictcliicru4" path="res://Assets/Gaphics/Ui/TitleScreenParallax/scaryAsianPainting.png" id="2_jak1b"]
+[ext_resource type="Texture2D" uid="uid://bfyixck3fenir" path="res://Assets/Gaphics/Ui/TitleScreenParallax/Eye.png" id="3_3mm4n"]
+[ext_resource type="Texture2D" uid="uid://dtrju58dag5xi" path="res://Assets/Gaphics/Ui/TitleScreenParallax/NakedShieldGuyWithSmile.png" id="4_f3xgm"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -13,9 +16,15 @@ script = ExtResource("1_23ck3")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -59.5
+offset_right = 135.0
+offset_bottom = 59.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -50,6 +59,49 @@ text = "Levels"
 [node name="TestLevelButton" type="Button" parent="CenterContainer/HBoxContainer/LevelContainer"]
 layout_mode = 2
 text = "test level"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Titel" type="Label" parent="ParallaxBackground/ParallaxLayer3"]
+offset_left = 296.0
+offset_top = 37.0
+offset_right = 923.0
+offset_bottom = 314.0
+theme_override_font_sizes/font_size = 100
+text = "Unser Cooler
+Titel"
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="EyeTexture" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+offset_left = -66.0
+offset_top = 31.0
+offset_right = 472.0
+offset_bottom = 745.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_3mm4n")
+
+[node name="ScaryAsianMonster" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+offset_left = 741.0
+offset_top = 33.0
+offset_right = 1308.0
+offset_bottom = 840.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_jak1b")
+flip_h = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="NudeGuy" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 435.0
+offset_top = 325.0
+offset_right = 947.0
+offset_bottom = 1349.0
+texture = ExtResource("4_f3xgm")
 
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/RepoLinkButton" to="." method="_on_repo_link_button_pressed"]
