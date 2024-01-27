@@ -21,6 +21,14 @@ func fade(color: Color, time: float):
 	var t = create_tween()
 	t.tween_property($ColorRect, "color", color, time)
 	return t.finished
+
+func update_health(curr):
+	var h = $GridContainer.get_children()[curr]
+	var t = create_tween()
+	t.tween_property(h, "scale", h.scale*1.1, 0.2).set_trans(Tween.TRANS_ELASTIC)
+	t.chain().tween_property(h, "scale", Vector2.ZERO, 0.1)
+	await t.finished
+	h.visible = false
 	
 func play_weapon_fire():
 	$HudAnimPlayer.play("weapon_fire")

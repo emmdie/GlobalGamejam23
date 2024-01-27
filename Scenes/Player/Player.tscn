@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://baeoasb40ibv4"]
+[gd_scene load_steps=22 format=3 uid="uid://baeoasb40ibv4"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player_main.gd" id="1_mrhpv"]
 [ext_resource type="PackedScene" uid="uid://flhnxq6k1liu" path="res://Scenes/BulletHoles/bullet_hole.tscn" id="2_ln82l"]
@@ -9,10 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://71ua2d7vv2sd" path="res://Assets/Gaphics/crosshair.png" id="6_5eolx"]
 [ext_resource type="Texture2D" uid="uid://b4qk0mgdxx6j0" path="res://Assets/Gaphics/player/gun_min_fire.png" id="8_kkqfy"]
 [ext_resource type="Script" path="res://Scripts/Common/AudioCue2D.gd" id="9_1c6da"]
+[ext_resource type="Texture2D" uid="uid://1wjsvrje1wro" path="res://Assets/Gaphics/player/heart.png" id="9_pb05i"]
 [ext_resource type="AudioStream" uid="uid://dnrcs1d7g673y" path="res://Assets/Sounds/Weapon/shot_1.wav" id="10_uahq2"]
 [ext_resource type="AudioStream" uid="uid://c4coi312mw1xa" path="res://Assets/Sounds/Player/player_jump.wav" id="11_52j0d"]
 [ext_resource type="AudioStream" uid="uid://cbaw2vpdge14u" path="res://Assets/Sounds/Player/player_hurt1.wav" id="11_ho2ha"]
 [ext_resource type="AudioStream" uid="uid://mnq8ianttbyh" path="res://Assets/Sounds/Player/player_hurt2.wav" id="12_s7x6c"]
+[ext_resource type="AudioStream" uid="uid://cmdtg4mu442pm" path="res://Assets/Sounds/Player/player_death.wav" id="15_arl5e"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xapke"]
 
@@ -145,6 +147,34 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
+[node name="GridContainer" type="GridContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -78.0
+offset_right = 536.0
+offset_bottom = 130.0
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+columns = 3
+
+[node name="Heart1" type="TextureRect" parent="HUD/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_pb05i")
+
+[node name="Heart2" type="TextureRect" parent="HUD/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_pb05i")
+
+[node name="Heart3" type="TextureRect" parent="HUD/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_pb05i")
+
 [node name="WeaponCooldown" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
@@ -162,6 +192,10 @@ sources = Array[AudioStream]([ExtResource("11_ho2ha"), ExtResource("12_s7x6c")])
 [node name="Jump" type="AudioStreamPlayer2D" parent="SFX"]
 script = ExtResource("9_1c6da")
 sources = Array[AudioStream]([ExtResource("11_52j0d")])
+
+[node name="Die" type="AudioStreamPlayer2D" parent="SFX"]
+script = ExtResource("9_1c6da")
+sources = Array[AudioStream]([ExtResource("15_arl5e")])
 
 [node name="HurtTimer" type="Timer" parent="."]
 wait_time = 0.3

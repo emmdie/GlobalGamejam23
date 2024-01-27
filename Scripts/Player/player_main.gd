@@ -22,6 +22,8 @@ var in_coyote_time = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 32
+var health: int = 3
+var dead = false
 
 @export var bulletHoleScene: PackedScene
 
@@ -31,11 +33,14 @@ var gravity = 32
 @onready var hud = get_node("HUD")
 @onready var weaponCooldown: Timer = get_node("WeaponCooldown")
 
+signal player_died
+
 func _ready():
 	add_to_group("players")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _process(delta: float):
+	if dead: return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -82,6 +87,7 @@ func _calculate_velocity(dir: Vector3, delta: float):
 
 
 func _input(event):
+	if dead: return
 	if event.is_action_pressed("fire"):
 		_fire_weapon()
 
@@ -91,6 +97,7 @@ func fade_to_wheat():
 	return $HUD.fade(c, 1.3)
 
 func _fire_weapon():
+	if dead: return
 	if weaponCooldown.is_stopped():
 		$SFX/Shoot.playQueue()
 		hud.bump_crosshair()
@@ -106,13 +113,30 @@ func _fire_weapon():
 			bh.place(collision.position, collision.normal)
 
 func hit(normal):
+	if dead: return
 	if $HurtTimer.is_stopped():
+		health -= 1
+		$HUD.update_health(health)
+		if health <= 0:
+			die()
+			return
 		camera.shake()
 		$SFX/Hurt.playQueue()
 		normal.y = 0
 		velocity = -normal * 32
 		$HurtTimer.start()
-		$HUD.flash_overlay(Color.RED)
+		$HUD.flash_overlay(Color.DARK_RED)
+		
+func die():
+	if dead: return
+	dead = true
+	var t = create_tween()
+	t.tween_property(camera, "position:y", camera.position.y - 1.2, 0.8).set_trans(Tween.TRANS_ELASTIC)
+	$SFX/Die.playQueue()
+	var c = Color.DARK_RED
+	c.a = 0.6
+	await $HUD.fade(c, 1.2)
+	player_died.emit()
 
 func _on_coyote_timer_timeout():
 	in_coyote_time = false
