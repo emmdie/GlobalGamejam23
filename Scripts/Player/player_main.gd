@@ -52,6 +52,7 @@ func _process(delta: float):
 	
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and _can_jump():
+		$SFX/Jump.playQueue()
 		velocity.y = JUMP_VELOCITY
 		coyoteTimer.start(COYOTE_TIME)
 	move_and_slide()
@@ -87,7 +88,7 @@ func _input(event):
 
 func _fire_weapon():
 	if weaponCooldown.is_stopped():
-		$SFX/AudioCue2D.playQueue()
+		$SFX/Shoot.playQueue()
 		hud.bump_crosshair()
 		weaponCooldown.start()
 		hud.play_weapon_fire()
@@ -102,6 +103,7 @@ func _fire_weapon():
 
 func hit(normal):
 	if $HurtTimer.is_stopped():
+		$SFX/Hurt.playQueue()
 		normal.y = 0
 		velocity = -normal * 32
 		$HurtTimer.start()

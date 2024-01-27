@@ -21,6 +21,8 @@ var dead = false
 
 signal enemy_died
 
+@export var smiles : Array[CompressedTexture2D]
+
 func _ready():
 	free_timer.one_shot = true
 	add_to_group("enemies")
@@ -38,6 +40,8 @@ func hit(dmg, normal):
 	if dead: return
 	$Sprite/EnemySprite/AnimationPlayer.stop()
 	dead = true
+	var smileTex = smiles[randi_range(0, smiles.size()-1)]
+	$Sprite/EnemySprite/Smile.texture = smileTex
 	push_vel = -velocity.normalized() * 240
 	$Sprite/EnemySprite/Smile.visible = true
 	$SFX/Hit.playQueue()
