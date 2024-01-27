@@ -85,6 +85,10 @@ func _input(event):
 	if event.is_action_pressed("fire"):
 		_fire_weapon()
 
+func fade_to_wheat():
+	var c = Color.WHEAT
+	c.a = 0.6
+	return $HUD.fade(c, 1.3)
 
 func _fire_weapon():
 	if weaponCooldown.is_stopped():

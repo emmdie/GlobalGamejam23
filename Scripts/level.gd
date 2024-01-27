@@ -21,6 +21,7 @@ func pause_game():
 	get_tree().paused = true
 
 func level_won():
+	await $Player.fade_to_wheat()
 	var level_won_screen = load(SceneList.level_won_screen).instantiate()
 	add_child(level_won_screen)
 	level_won_screen.main_menu.connect(change_to_main_menu)
