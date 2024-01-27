@@ -10,6 +10,9 @@ func _on_repo_link_button_pressed():
 func _on_credits_button_pressed():
 	OS.shell_open("https://github.com/emmdie/GlobalGamejam23/blob/main/credits.md")
 
+func _on_exit_button_pressed():
+	get_tree().quit()
+
 func load_level(level_scene):
 	var scene = load(level_scene)
 	var level = scene.instantiate()
@@ -18,6 +21,6 @@ func load_level(level_scene):
 	
 func _on_test_level_button_pressed():
 	load_level(SceneList.test_level)
-
-func _on_exit_button_pressed():
-	get_tree().quit()
+	
+func _on_level_0_button_pressed():
+	load_level(SceneList.Tutorial)
