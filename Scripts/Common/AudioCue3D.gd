@@ -13,7 +13,7 @@ func _ready():
 func playQueue():
 	if sources.size() > 1:
 		stream = sources[randi() % sources.size()]
-		play()
+		randPitch()
 	else:
 		randPitch()
 

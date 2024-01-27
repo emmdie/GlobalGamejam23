@@ -4,5 +4,5 @@ class_name EnemyHitbox
 
 @export var parent: EnemyBase
 
-func hit(dmg):
-	parent.hit(dmg)
+func hit(dmg, normal):
+	parent.hit(dmg, normal)

@@ -11,9 +11,17 @@ class_name EnemyBase
 
 @onready var player
 @onready var free_timer = Timer.new()
+@onready var push_force: float = 0
+
+var SELF_PUSH_MOD = 1.5
+var PUSH_FORCE = 90
+var push_vel: Vector3 = Vector3.ZERO
+
 var dead = false
 
 signal enemy_died
+
+@export var smiles : Array[CompressedTexture2D]
 
 func _ready():
 	free_timer.one_shot = true
@@ -28,7 +36,14 @@ func _ready():
 	# Make sure to not await during _ready.
 	call_deferred("actor_setup")
 
-func hit(dmg):
+func hit(dmg, normal):
+	if dead: return
+	$Sprite/EnemySprite/AnimationPlayer.stop()
+	dead = true
+	var smileTex = smiles[randi_range(0, smiles.size()-1)]
+	$Sprite/EnemySprite/Smile.texture = smileTex
+	push_vel = -velocity.normalized() * 240
+	$Sprite/EnemySprite/Smile.visible = true
 	$SFX/Hit.playQueue()
 	health -= dmg
 	if health <= 0:
@@ -81,9 +96,10 @@ func _physics_process(delta):
 	if !is_on_floor():
 		velocity.y = velocity.y * 15*delta
 
-	velocity = new_velocity
+	velocity = new_velocity + push_vel
+	push_vel = Vector3.ZERO
 	should_move = true
-	
+
 
 func _process(delta):
 	if dead || !should_move: return
@@ -91,9 +107,14 @@ func _process(delta):
 	test_collisions()
 
 
+func push_back(vec: Vector3, force: int):
+	velocity = velocity + vec.normalized() * (force * SELF_PUSH_MOD)
+
 func test_collisions():
 	if get_slide_collision_count() > 0:
 		for i in get_slide_collision_count() - 1:
 			var col = get_slide_collision(i)
 			if col.get_collider() is Player:
-				print("player hit")#explode()
+				if $HitCoolDown.is_stopped():
+					$HitCoolDown.start()
+					col.get_collider().hit(col.get_normal())
