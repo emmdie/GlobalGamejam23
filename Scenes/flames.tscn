@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://w5awum31lf1r"]
+
+[ext_resource type="Texture2D" uid="uid://rv3l1s0b4m3b" path="res://Assets/Gaphics/fx/fire_sheet.png" id="1_k4hsi"]
+[ext_resource type="Script" path="res://Scripts/flipbookplayer.gd" id="2_cjxtl"]
+
+[node name="Flames" type="Sprite3D"]
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_k4hsi")
+hframes = 3
+script = ExtResource("2_cjxtl")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.811765, 0.501961, 0.231373, 1)
+light_energy = 4.071
+omni_range = 10.65
+omni_attenuation = 0.329877
