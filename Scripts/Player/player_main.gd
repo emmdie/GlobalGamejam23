@@ -23,7 +23,13 @@ var in_coyote_time = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 32
 
+@export var bulletHoleScene: PackedScene
+
 @onready var coyoteTimer: Timer = get_node("CoyoteTimer")
+@onready var weaponSprite: WeaponSprite = get_node("HUD/Weapon")
+@onready var camera: Camera3D = get_node("Camera3D")
+@onready var hud = get_node("HUD")
+@onready var weaponCooldown: Timer = get_node("WeaponCooldown")
 
 func _ready():
 	add_to_group("players")
@@ -39,9 +45,13 @@ func _process(delta: float):
 	input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
+	if input_dir.y != 0:
+		weaponSprite.do_bob(delta)
+	
 	_calculate_velocity(direction, delta)
+	
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and _can_jump():
+	if Input.is_action_just_pressed("jump") and _can_jump():
 		velocity.y = JUMP_VELOCITY
 		coyoteTimer.start(COYOTE_TIME)
 	move_and_slide()
@@ -67,6 +77,22 @@ func _calculate_velocity(dir: Vector3, delta: float):
 		velocity = lerp(velocity, Vector3.ZERO, firction * delta)
 	
 	velocity.y = yvel
+
+func _input(event):
+	if event.is_action_pressed("fire"):
+		_fire_weapon()
+
+func _fire_weapon():
+	if weaponCooldown.is_stopped():
+		hud.bump_crosshair()
+		weaponCooldown.start()
+		hud.play_weapon_fire()
+		var collision: Dictionary = camera.shoot_ray()
+		if !collision.is_empty():
+			var bh = bulletHoleScene.instantiate()
+			get_parent().add_child(bh)
+			bh.place(collision.position, collision.normal)
+
 
 func _on_coyote_timer_timeout():
 	in_coyote_time = false
