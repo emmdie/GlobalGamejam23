@@ -31,3 +31,10 @@ func _on_level_1_button_pressed():
 
 func _on_intro_button_pressed():
 	load_level(SceneList.slideshow)
+
+
+func _on_check_button_toggled(toggled_on):
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED) 
