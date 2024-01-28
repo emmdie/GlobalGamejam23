@@ -16,7 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://mnq8ianttbyh" path="res://Assets/Sounds/Player/player_hurt2.wav" id="12_s7x6c"]
 [ext_resource type="AudioStream" uid="uid://cmdtg4mu442pm" path="res://Assets/Sounds/Player/player_death.wav" id="15_arl5e"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_xapke"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4kqlh"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_6j3nx"]
 
@@ -64,13 +64,13 @@ _data = {
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 5
-floor_stop_on_slope = false
+floor_constant_speed = true
 script = ExtResource("1_mrhpv")
 bulletHoleScene = ExtResource("2_ln82l")
 
 [node name="BodyCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CylinderShape3D_xapke")
+shape = SubResource("CapsuleShape3D_4kqlh")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6824, 0)

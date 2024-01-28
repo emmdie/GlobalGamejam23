@@ -1,0 +1,175 @@
+[gd_scene load_steps=9 format=3 uid="uid://dwv2h47krourw"]
+
+[ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_njy18"]
+[ext_resource type="Texture2D" uid="uid://df4ie7yk8gcve" path="res://Assets/Gaphics/Ui/StorySlides/AnimalDrawing.jpg" id="2_fmjt2"]
+[ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="3_5wbll"]
+[ext_resource type="Texture2D" uid="uid://2kq8v050jqof" path="res://Assets/Gaphics/Ui/StorySlides/monsters/CyclopsHead.png" id="3_xrmvx"]
+[ext_resource type="Texture2D" uid="uid://w5f2w22q3r5c" path="res://Assets/Gaphics/Ui/StorySlides/monsters/cyclopsBottom.png" id="4_p8ric"]
+
+[sub_resource type="Animation" id="Animation_6m27b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.174533]
+}
+
+[sub_resource type="Animation" id="Animation_ffo4i"]
+resource_name = "talking"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-35, 35), Vector2(4.19617e-05, -5.72205e-06), Vector2(-63.3334, 36.6667)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.174533, -0.174533]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yqg56"]
+_data = {
+"RESET": SubResource("Animation_6m27b"),
+"talking": SubResource("Animation_ffo4i")
+}
+
+[node name="StorySlide1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_njy18")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.05, 0.05)
+
+[node name="Background" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = 1.0
+offset_right = 1481.0
+offset_bottom = 837.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_fmjt2")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.05, 0.05)
+
+[node name="AnimatedAnimal" type="Control" parent="ParallaxBackground/ParallaxLayer3"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 800.0
+offset_top = 220.0
+offset_right = 800.0
+offset_bottom = 220.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.6, 0.6)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer3/AnimatedAnimal"]
+libraries = {
+"": SubResource("AnimationLibrary_yqg56")
+}
+autoplay = "talking"
+
+[node name="Head" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3/AnimatedAnimal"]
+layout_mode = 2
+offset_right = 636.0
+offset_bottom = 677.0
+rotation = 0.174533
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_xrmvx")
+
+[node name="Bottom" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3/AnimatedAnimal"]
+layout_mode = 2
+offset_left = -146.0
+offset_top = 114.0
+offset_right = 1470.0
+offset_bottom = 2207.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_p8ric")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="SlideTextDisplay" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 26.0
+offset_top = 120.0
+offset_right = 739.0
+offset_bottom = 232.0
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 23
+text = "Once upon a time, the public domain book characters of the world lived in peace and harmony. 
+They were free of copyright and happy for it"
+
+[node name="CharacterTimer" type="Timer" parent="."]
+wait_time = 0.04
+autostart = true
+
+[node name="keyBoardSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5wbll")
+volume_db = -16.865
+
+[node name="NextButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Continue"
+
+[connection signal="timeout" from="CharacterTimer" to="." method="_on_character_timer_timeout"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

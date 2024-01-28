@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://h5et4va4brwi"]
+
+[ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_siy2j"]
+[ext_resource type="Texture2D" uid="uid://dqtqrkboc2x2y" path="res://Assets/Gaphics/Ui/StorySlides/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.png" id="2_w5nua"]
+[ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="5_yw3ya"]
+
+[node name="StorySlide3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_siy2j")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.05, 0.05)
+
+[node name="Background" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -133.0
+offset_top = -72.0
+offset_right = 2667.0
+offset_bottom = 3973.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.2)
+texture = ExtResource("2_w5nua")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.05, 0.05)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="SlideTextDisplay" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 33.0
+offset_top = 348.0
+offset_right = 746.0
+offset_bottom = 460.0
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 23
+text = "What they did was erasing every single smile from the realm of the public domain. A curse even more evil than the lawyers of Dosneys Mockey Mouse could ever have dreamed of. "
+
+[node name="CharacterTimer" type="Timer" parent="."]
+wait_time = 0.04
+autostart = true
+
+[node name="keyBoardSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_yw3ya")
+volume_db = -16.865
+
+[node name="NextButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Continue"
+
+[connection signal="timeout" from="CharacterTimer" to="." method="_on_character_timer_timeout"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

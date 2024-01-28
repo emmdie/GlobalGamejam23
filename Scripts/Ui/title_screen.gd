@@ -28,3 +28,6 @@ func _on_level_0_button_pressed():
 
 func _on_level_1_button_pressed():
 	load_level(SceneList.Level1)
+
+func _on_intro_button_pressed():
+	load_level(SceneList.slideshow)
