@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://1im218khd3em"]
+[gd_scene load_steps=4 format=3 uid="uid://1im218khd3em"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/LevelWonScreen.gd" id="1_8ac3q"]
 [ext_resource type="Texture2D" uid="uid://cfr70rqxl6uax" path="res://Assets/Gaphics/Ui/deaht.png" id="2_1lt68"]
+[ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="3_8rpn1"]
 
 [node name="LevelWonScreen" type="Control"]
 process_mode = 3
@@ -62,10 +63,12 @@ layout_mode = 2
 
 [node name="Retry" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_8rpn1")
 text = "Retry"
 
 [node name="MainMenuButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_8rpn1")
 text = "Menu"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]

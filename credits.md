@@ -5,3 +5,4 @@
 - Big eye: [Odilon Redon’s À Edgar Poe (1882) ](https://publicdomainreview.org/collection/odilon-redon-a-edgar-poe/)
 - Book Texture: [16th-Century Pattern Book for Scribes](https://publicdomainreview.org/collection/16th-century-pattern-book-for-scribes/)
 - [Illustrations from the Lights of Canopus (1847)](Illustrations from the Lights of Canopus (1847) )
+- Font [Grotesk](https://fontesk.com/kunstler-grotesk-font/) under the [SIL open font licence](https://openfontlicense.org/open-font-license-official-text/)
