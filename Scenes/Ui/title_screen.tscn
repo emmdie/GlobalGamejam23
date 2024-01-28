@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxk27vl1b7w7c"]
+[gd_scene load_steps=11 format=3 uid="uid://dxk27vl1b7w7c"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/title_screen.gd" id="1_23ck3"]
 [ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="2_6jhye"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d0ictcliicru4" path="res://Assets/Gaphics/Ui/TitleScreenParallax/scaryAsianPainting.png" id="2_jak1b"]
 [ext_resource type="Texture2D" uid="uid://bfyixck3fenir" path="res://Assets/Gaphics/Ui/TitleScreenParallax/Eye.png" id="3_3mm4n"]
 [ext_resource type="Texture2D" uid="uid://dtrju58dag5xi" path="res://Assets/Gaphics/Ui/TitleScreenParallax/NakedShieldGuyWithSmile.png" id="4_f3xgm"]
+[ext_resource type="Texture2D" uid="uid://bo14fyxfjuufp" path="res://Assets/Gaphics/Ui/StorySlides/lowResSmile.png" id="4_lxb3y"]
 [ext_resource type="Texture2D" uid="uid://dvl01c46brlp" path="res://Assets/Gaphics/Ui/StorySlides/robot.png" id="4_mrg3b"]
 [ext_resource type="PackedScene" uid="uid://dep85tq0bgthg" path="res://Scenes/Ui/StorySlides/animated_animal.tscn" id="6_jsla4"]
 [ext_resource type="FontFile" uid="uid://dm60k4mbf108x" path="res://Assets/KuenstlerGrotesk.ttf" id="7_2lgbc"]
@@ -40,6 +41,13 @@ theme_override_constants/separation = 60
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
 
+[node name="IntroButton" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_6jhye")
+text = "Replay
+Opening
+Cinematic"
+
 [node name="ExitButton" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_6jhye")
@@ -50,19 +58,13 @@ layout_mode = 2
 theme = ExtResource("2_6jhye")
 text = "Fullscreen"
 
-[node name="HowToPlayButton" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_6jhye")
-text = "How to Play"
-
 [node name="LevelContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="IntroButton" type="Button" parent="CenterContainer/HBoxContainer/LevelContainer"]
+[node name="HowToPlayButton" type="Button" parent="CenterContainer/HBoxContainer/LevelContainer"]
 layout_mode = 2
 theme = ExtResource("2_6jhye")
-text = "Opening
-Cinematic"
+text = "How to Play"
 
 [node name="Level0Button" type="Button" parent="CenterContainer/HBoxContainer/LevelContainer"]
 layout_mode = 2
@@ -98,6 +100,22 @@ offset_right = 872.0
 offset_bottom = 545.0
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("2_22240")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2(621, -483)
+rotation = -3.08225
+amount = 6
+lifetime = 4.0
+texture = ExtResource("4_lxb3y")
+direction = Vector2(0, -1)
+spread = 54.09
+gravity = Vector2(0, 200)
+initial_velocity_min = 114.29
+initial_velocity_max = 342.85
+angular_velocity_min = -40.73
+angular_velocity_max = 14.13
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.35, 0.35)
@@ -205,10 +223,10 @@ theme = ExtResource("2_6jhye")
 text = "made with <3 for
 globalGameJam"
 
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/IntroButton" to="." method="_on_intro_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="toggled" from="CenterContainer/HBoxContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/IntroButton" to="." method="_on_intro_button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/Level0Button" to="." method="_on_level_0_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/Level1Button" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/Level3Button" to="." method="_on_level_3_button_pressed"]
