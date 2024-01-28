@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cs1ywtna65adc"]
+[gd_scene load_steps=15 format=3 uid="uid://cs1ywtna65adc"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_b5nkt"]
 [ext_resource type="Texture2D" uid="uid://doe78xmsjtey4" path="res://Assets/Gaphics/Ui/StorySlides/nothernLights.jpeg" id="2_yh200"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cugnylftce3di" path="res://Assets/Gaphics/enemies/fish.png" id="9_p1w7o"]
 [ext_resource type="Texture2D" uid="uid://64kl1dxwrt16" path="res://Assets/Gaphics/enemies/ShieldGuy.png" id="10_7ind2"]
 [ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="11_84u4e"]
+[ext_resource type="Texture2D" uid="uid://bo14fyxfjuufp" path="res://Assets/Gaphics/Ui/StorySlides/lowResSmile.png" id="12_fw6j3"]
+[ext_resource type="Texture2D" uid="uid://disjodiyx5h37" path="res://Assets/Gaphics/player/gun.png" id="12_ujxp4"]
 
 [node name="StorySlide1" type="Control"]
 layout_mode = 3
@@ -116,6 +118,28 @@ offset_bottom = 1011.0
 rotation = -0.0026507
 scale = Vector2(0.72283, 0.746693)
 texture = ExtResource("10_7ind2")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer6"]
+offset_left = 626.0
+offset_top = 230.0
+offset_right = 1461.0
+offset_bottom = 856.0
+scale = Vector2(0.812574, 0.795135)
+texture = ExtResource("12_ujxp4")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ParallaxBackground/ParallaxLayer6/TextureRect"]
+position = Vector2(364.275, 289.259)
+rotation = 0.598648
+amount = 2
+lifetime = 4.0
+texture = ExtResource("12_fw6j3")
+direction = Vector2(-1, -0.5)
+spread = 21.36
+gravity = Vector2(0, 200)
+initial_velocity_min = 585.86
+initial_velocity_max = 585.86
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0, 0)

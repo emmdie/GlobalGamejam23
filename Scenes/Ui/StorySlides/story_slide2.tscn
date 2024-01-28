@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dg1rvajwm8kf7"]
+[gd_scene load_steps=15 format=3 uid="uid://dg1rvajwm8kf7"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_67fva"]
 [ext_resource type="Texture2D" uid="uid://drl16m8mlgadi" path="res://Assets/Gaphics/Ui/StorySlides/Entretiens_sur_la_pluralité_des_[...]Fontenelle_Bernard_btv1b86207579_40-edit.jpeg" id="2_ilrkp"]
 [ext_resource type="PackedScene" uid="uid://dep85tq0bgthg" path="res://Scenes/Ui/StorySlides/animated_animal.tscn" id="3_1lvtr"]
+[ext_resource type="Texture2D" uid="uid://cn0pyncioro53" path="res://Assets/Gaphics/Ui/StorySlides/Cats/lightning.png" id="3_lcqi2"]
 [ext_resource type="Texture2D" uid="uid://ckum4fdlb5eor" path="res://Assets/Gaphics/Ui/StorySlides/Cats/CrotchetHead.png" id="4_d04p2"]
 [ext_resource type="Texture2D" uid="uid://ht6erdpjd0l5" path="res://Assets/Gaphics/Ui/StorySlides/Cats/CrotchetBottom.png" id="5_8plto"]
 [ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="5_wdysg"]
@@ -99,6 +100,60 @@ grow_vertical = 2
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_ilrkp")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(924, 539)
+rotation = -1.26885
+scale = Vector2(0.4, 0.4)
+amount = 2
+explosiveness = 0.89
+randomness = 1.0
+lifetime_randomness = 0.13
+texture = ExtResource("3_lcqi2")
+emission_shape = 1
+emission_sphere_radius = 109.6
+spread = 180.0
+gravity = Vector2(0, 50)
+initial_velocity_min = 171.71
+initial_velocity_max = 767.67
+angle_min = -720.0
+angle_max = 720.0
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(647, 497)
+rotation = -1.26885
+scale = Vector2(0.4, 0.4)
+amount = 2
+explosiveness = 0.89
+randomness = 1.0
+lifetime_randomness = 0.13
+texture = ExtResource("3_lcqi2")
+emission_shape = 1
+emission_sphere_radius = 109.6
+spread = 180.0
+gravity = Vector2(0, 50)
+initial_velocity_min = 171.71
+initial_velocity_max = 767.67
+angle_min = -720.0
+angle_max = 720.0
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(328, 514)
+rotation = -1.26885
+scale = Vector2(0.4, 0.4)
+amount = 2
+explosiveness = 0.89
+randomness = 1.0
+lifetime_randomness = 0.13
+texture = ExtResource("3_lcqi2")
+emission_shape = 1
+emission_sphere_radius = 109.6
+spread = 180.0
+gravity = Vector2(0, 50)
+initial_velocity_min = 171.71
+initial_velocity_max = 767.67
+angle_min = -720.0
+angle_max = 720.0
+
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.2, 0.2)
 
@@ -192,7 +247,8 @@ theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 29
-text = "That was until the council of evil wizard cats convened... 
+bbcode_enabled = true
+text = "That was until the [rainbow freq=1.0 sat=0.8 val=0.8][wave amp=50.0 freq=5.0 connected=1]council of evil wizard cats[/wave][/rainbow] convened... 
 Eager to push everyone into madness and misery, they casted a spell so evil, it is almost  impossible to describe. The \"fair use firestorm\".
 Damn you, wizard cats!"
 
