@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dxk27vl1b7w7c"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/title_screen.gd" id="1_23ck3"]
-[ext_resource type="Theme" uid="uid://vix4fuwlk1fu" path="res://MainTheme.tres" id="2_6jhye"]
+[ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="2_6jhye"]
 [ext_resource type="Texture2D" uid="uid://c5un66qxlutqa" path="res://Assets/Gaphics/Ui/TitleScreenParallax/Book.jpg" id="2_22240"]
 [ext_resource type="Texture2D" uid="uid://d0ictcliicru4" path="res://Assets/Gaphics/Ui/TitleScreenParallax/scaryAsianPainting.png" id="2_jak1b"]
 [ext_resource type="Texture2D" uid="uid://bfyixck3fenir" path="res://Assets/Gaphics/Ui/TitleScreenParallax/Eye.png" id="3_3mm4n"]
@@ -64,11 +64,6 @@ layout_mode = 2
 theme = ExtResource("2_6jhye")
 text = "Levels"
 
-[node name="TestLevelButton" type="Button" parent="CenterContainer/HBoxContainer/LevelContainer"]
-layout_mode = 2
-theme = ExtResource("2_6jhye")
-text = "test level"
-
 [node name="Level0Button" type="Button" parent="CenterContainer/HBoxContainer/LevelContainer"]
 layout_mode = 2
 theme = ExtResource("2_6jhye")
@@ -78,6 +73,12 @@ text = "Level 0"
 layout_mode = 2
 theme = ExtResource("2_6jhye")
 text = "Level 1"
+
+[node name="Button" type="Button" parent="CenterContainer/HBoxContainer/LevelContainer"]
+layout_mode = 2
+theme = ExtResource("2_6jhye")
+text = "Ending
+Cinematic"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -202,8 +203,8 @@ globalGameJam"
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="toggled" from="CenterContainer/HBoxContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/IntroButton" to="." method="_on_intro_button_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/TestLevelButton" to="." method="_on_test_level_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/Level0Button" to="." method="_on_level_0_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/Level1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/RepoLinkButton" to="." method="_on_repo_link_button_pressed"]
