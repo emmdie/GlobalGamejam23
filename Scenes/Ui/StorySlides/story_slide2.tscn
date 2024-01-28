@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dg1rvajwm8kf7"]
+[gd_scene load_steps=13 format=3 uid="uid://dg1rvajwm8kf7"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_67fva"]
 [ext_resource type="Texture2D" uid="uid://drl16m8mlgadi" path="res://Assets/Gaphics/Ui/StorySlides/Entretiens_sur_la_pluralité_des_[...]Fontenelle_Bernard_btv1b86207579_40-edit.jpeg" id="2_ilrkp"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="5_wdysg"]
 [ext_resource type="Texture2D" uid="uid://ddappj5fcvh7w" path="res://Assets/Gaphics/Ui/StorySlides/Cats/crownHead.png" id="6_70oj5"]
 [ext_resource type="Texture2D" uid="uid://dytv5i1cgalmd" path="res://Assets/Gaphics/Ui/StorySlides/Cats/crownBottoms.png" id="7_kbf7m"]
+[ext_resource type="AudioStream" uid="uid://bx3mpr2upp4ta" path="res://Assets/Audio/Sfx/Ui/cats.ogg" id="9_csj2v"]
 
 [sub_resource type="Animation" id="Animation_6m27b"]
 length = 0.001
@@ -213,6 +214,24 @@ offset_top = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Continue"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_csj2v")
+autoplay = true
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_csj2v")
+autoplay = true
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_csj2v")
+pitch_scale = 0.85
+autoplay = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_csj2v")
+pitch_scale = 1.44
+autoplay = true
 
 [connection signal="timeout" from="CharacterTimer" to="." method="_on_character_timer_timeout"]
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

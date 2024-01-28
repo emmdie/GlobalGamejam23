@@ -93,7 +93,10 @@ offset_bottom = 545.0
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("2_22240")
 
-[node name="Titel" type="Label" parent="ParallaxBackground/ParallaxLayer3"]
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.35, 0.35)
+
+[node name="Titel" type="Label" parent="ParallaxBackground/ParallaxLayer5"]
 offset_left = 296.0
 offset_top = 37.0
 offset_right = 923.0
@@ -101,23 +104,24 @@ offset_bottom = 314.0
 theme_override_font_sizes/font_size = 100
 text = "Unser Cooler
 Titel"
+horizontal_alignment = 1
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.65, 0.65)
 
 [node name="EyeTexture" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
-offset_left = -104.0
-offset_top = 133.0
-offset_right = 434.0
-offset_bottom = 847.0
+offset_left = -170.0
+offset_top = 120.0
+offset_right = 368.0
+offset_bottom = 834.0
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_3mm4n")
 
 [node name="ScaryAsianMonster" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
-offset_left = 741.0
-offset_top = 33.0
-offset_right = 1308.0
-offset_bottom = 840.0
+offset_left = 779.0
+offset_top = 35.0
+offset_right = 1346.0
+offset_bottom = 842.0
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_jak1b")
 flip_h = true
@@ -125,10 +129,10 @@ flip_h = true
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="NudeGuy" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-offset_left = 435.0
-offset_top = 325.0
-offset_right = 947.0
-offset_bottom = 1349.0
+offset_left = 511.0
+offset_top = 340.0
+offset_right = 1023.0
+offset_bottom = 1364.0
 texture = ExtResource("4_f3xgm")
 
 [node name="Warning" type="Label" parent="ParallaxBackground/ParallaxLayer"]
