@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsc83jfav0ul4"]
+[gd_scene load_steps=6 format=3 uid="uid://dsc83jfav0ul4"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_hog12"]
 [ext_resource type="Texture2D" uid="uid://x855xqad2dk5" path="res://Assets/Gaphics/Ui/StorySlides/Moon.jpg" id="2_gte0k"]
 [ext_resource type="Texture2D" uid="uid://dvl01c46brlp" path="res://Assets/Gaphics/Ui/StorySlides/robot.png" id="3_y06bi"]
+[ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="4_y04qk"]
 [ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="5_s2hnc"]
 
 [node name="StorySlide1" type="Control"]
@@ -48,14 +49,15 @@ texture = ExtResource("3_y06bi")
 motion_scale = Vector2(0, 0)
 
 [node name="SlideTextDisplay" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
-offset_left = 200.0
-offset_top = 96.0
-offset_right = 913.0
-offset_bottom = 296.0
+offset_left = 218.0
+offset_top = 127.0
+offset_right = 931.0
+offset_bottom = 271.0
+theme = ExtResource("4_y04qk")
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/normal_font_size = 28
 text = "Far away in a land beyond the influence of the wizard cats, word of their mischief reaches the DOMAIN_DEFENDATRON. 
 Grabbing a tape gun and marker he prepares for a Copyright Carnage."
 
@@ -78,6 +80,7 @@ offset_left = -8.0
 offset_top = -8.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("4_y04qk")
 text = "Continue"
 
 [connection signal="timeout" from="CharacterTimer" to="." method="_on_character_timer_timeout"]

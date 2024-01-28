@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://h5et4va4brwi"]
+[gd_scene load_steps=5 format=3 uid="uid://h5et4va4brwi"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_siy2j"]
 [ext_resource type="Texture2D" uid="uid://dqtqrkboc2x2y" path="res://Assets/Gaphics/Ui/StorySlides/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.png" id="2_w5nua"]
+[ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="3_awobj"]
 [ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="5_yw3ya"]
 
 [node name="StorySlide3" type="Control"]
@@ -38,14 +39,15 @@ motion_scale = Vector2(0.05, 0.05)
 motion_scale = Vector2(0.2, 0.2)
 
 [node name="SlideTextDisplay" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
-offset_left = 33.0
-offset_top = 348.0
-offset_right = 746.0
-offset_bottom = 460.0
+offset_left = 67.0
+offset_top = 372.0
+offset_right = 780.0
+offset_bottom = 484.0
+theme = ExtResource("3_awobj")
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/normal_font_size = 28
 text = "What they did was erasing every single smile from the realm of the public domain. A curse even more evil than the lawyers of Dosneys Mockey Mouse could ever have dreamed of. "
 
 [node name="CharacterTimer" type="Timer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dg1rvajwm8kf7"]
+[gd_scene load_steps=14 format=3 uid="uid://dg1rvajwm8kf7"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_67fva"]
 [ext_resource type="Texture2D" uid="uid://drl16m8mlgadi" path="res://Assets/Gaphics/Ui/StorySlides/Entretiens_sur_la_pluralité_des_[...]Fontenelle_Bernard_btv1b86207579_40-edit.jpeg" id="2_ilrkp"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="5_wdysg"]
 [ext_resource type="Texture2D" uid="uid://ddappj5fcvh7w" path="res://Assets/Gaphics/Ui/StorySlides/Cats/crownHead.png" id="6_70oj5"]
 [ext_resource type="Texture2D" uid="uid://dytv5i1cgalmd" path="res://Assets/Gaphics/Ui/StorySlides/Cats/crownBottoms.png" id="7_kbf7m"]
+[ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="8_v7uh4"]
 [ext_resource type="AudioStream" uid="uid://bx3mpr2upp4ta" path="res://Assets/Audio/Sfx/Ui/cats.ogg" id="9_csj2v"]
 
 [sub_resource type="Animation" id="Animation_6m27b"]
@@ -182,14 +183,15 @@ texture = ExtResource("7_kbf7m")
 motion_scale = Vector2(0.2, 0.2)
 
 [node name="SlideTextDisplay" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
-offset_left = 83.0
-offset_top = 161.0
-offset_right = 854.0
-offset_bottom = 371.0
+offset_left = 140.0
+offset_top = 198.0
+offset_right = 892.0
+offset_bottom = 360.0
+theme = ExtResource("8_v7uh4")
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 29
 text = "That was until the council of evil wizard cats convened... 
 Eager to push everyone into madness and misery, they casted a spell so evil, it is almost  impossible to describe. The \"fair use firestorm\".
 Damn you, wizard cats!"
