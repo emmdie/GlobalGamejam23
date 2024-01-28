@@ -42,3 +42,11 @@ func _on_check_button_toggled(toggled_on):
 
 func _on_button_pressed():
 	load_level(SceneList.endSlideShow)
+
+func _on_how_to_play_button_pressed():
+	var scene = load(SceneList.how_to_play_screen)
+	var screen = scene.instantiate()
+	add_child(screen)
+
+func _on_level_3_button_pressed():
+	load_level(SceneList.Level3)

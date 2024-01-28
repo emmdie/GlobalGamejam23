@@ -50,6 +50,11 @@ layout_mode = 2
 theme = ExtResource("2_6jhye")
 text = "Fullscreen"
 
+[node name="HowToPlayButton" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_6jhye")
+text = "How to Play"
+
 [node name="LevelContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
 
@@ -73,6 +78,11 @@ text = "Level 0"
 layout_mode = 2
 theme = ExtResource("2_6jhye")
 text = "Level 1"
+
+[node name="Level3Button" type="Button" parent="CenterContainer/HBoxContainer/LevelContainer"]
+layout_mode = 2
+theme = ExtResource("2_6jhye")
+text = "Level 3"
 
 [node name="Button" type="Button" parent="CenterContainer/HBoxContainer/LevelContainer"]
 layout_mode = 2
@@ -202,9 +212,11 @@ globalGameJam"
 
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="toggled" from="CenterContainer/HBoxContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/IntroButton" to="." method="_on_intro_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/Level0Button" to="." method="_on_level_0_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/Level1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/Level3Button" to="." method="_on_level_3_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/LevelContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/RepoLinkButton" to="." method="_on_repo_link_button_pressed"]

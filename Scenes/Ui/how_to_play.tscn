@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://b025tv67q10ea"]
+
+[ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="1_h73se"]
+[ext_resource type="Script" path="res://Scripts/Ui/how_to_play.gd" id="1_s86i5"]
+
+[node name="HowToPlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s86i5")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_h73se")
+bbcode_enabled = true
+text = "How to play:
+Use your tape Gun to apply smile Tapes to the enemies faces
+so go and shoot some  headshots. 
+[img=200]res://Assets/Gaphics/Ui/howTo/untapedFace.png[/img]  =>  [img=200]res://Assets/Gaphics/Ui/howTo/TapedFace.png[/img]
+
+
+"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Close" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_h73se")
+text = "Close"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Close" to="." method="_on_close_pressed"]

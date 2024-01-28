@@ -7,6 +7,8 @@ const level_loose_screen = "res://Scenes/Ui/LevelLooseScreen.tscn"
 const test_level = "res://Scenes/Levels/test_level.tscn"
 const Tutorial = "res://Scenes/Levels/Tutorial.tscn"
 const Level1 = "res://Scenes/Levels/Level1.tscn"
+const Level3 = "res://Scenes/Levels/Level2.tscn"
+const how_to_play_screen = "res://Scenes/Ui/how_to_play.tscn"
 
 const slide1 = "res://Scenes/Ui/StorySlides/StorySlide1.tscn"
 const slide2 = "res://Scenes/Ui/StorySlides/StorySlide2.tscn"
