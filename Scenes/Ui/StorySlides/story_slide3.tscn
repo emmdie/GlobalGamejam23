@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://h5et4va4brwi"]
+[gd_scene load_steps=6 format=3 uid="uid://h5et4va4brwi"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_siy2j"]
 [ext_resource type="Texture2D" uid="uid://dqtqrkboc2x2y" path="res://Assets/Gaphics/Ui/StorySlides/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.png" id="2_w5nua"]
 [ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="3_awobj"]
+[ext_resource type="Texture2D" uid="uid://boacebhnb5ahw" path="res://Assets/Gaphics/Ui/StorySlides/tear.png" id="3_udr1i"]
 [ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="5_yw3ya"]
 
 [node name="StorySlide3" type="Control"]
@@ -31,6 +32,13 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.2)
 texture = ExtResource("2_w5nua")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ParallaxBackground/ParallaxLayer2/Background"]
+position = Vector2(1412, 1005)
+amount = 2
+randomness = 0.84
+texture = ExtResource("3_udr1i")
+gravity = Vector2(0, 700)
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.05, 0.05)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxk27vl1b7w7c"]
+[gd_scene load_steps=10 format=3 uid="uid://dxk27vl1b7w7c"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/title_screen.gd" id="1_23ck3"]
 [ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="2_6jhye"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://d0ictcliicru4" path="res://Assets/Gaphics/Ui/TitleScreenParallax/scaryAsianPainting.png" id="2_jak1b"]
 [ext_resource type="Texture2D" uid="uid://bfyixck3fenir" path="res://Assets/Gaphics/Ui/TitleScreenParallax/Eye.png" id="3_3mm4n"]
 [ext_resource type="Texture2D" uid="uid://dtrju58dag5xi" path="res://Assets/Gaphics/Ui/TitleScreenParallax/NakedShieldGuyWithSmile.png" id="4_f3xgm"]
+[ext_resource type="Texture2D" uid="uid://dvl01c46brlp" path="res://Assets/Gaphics/Ui/StorySlides/robot.png" id="4_mrg3b"]
 [ext_resource type="PackedScene" uid="uid://dep85tq0bgthg" path="res://Scenes/Ui/StorySlides/animated_animal.tscn" id="6_jsla4"]
+[ext_resource type="FontFile" uid="uid://dm60k4mbf108x" path="res://Assets/KuenstlerGrotesk.ttf" id="7_2lgbc"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -107,15 +109,27 @@ texture = ExtResource("2_22240")
 motion_scale = Vector2(0.35, 0.35)
 
 [node name="Titel" type="Label" parent="ParallaxBackground/ParallaxLayer5"]
-offset_left = 296.0
-offset_top = 37.0
-offset_right = 923.0
-offset_bottom = 314.0
+offset_left = 250.0
+offset_top = 24.0
+offset_right = 877.0
+offset_bottom = 301.0
 theme = ExtResource("2_6jhye")
+theme_override_constants/shadow_offset_x = 15
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 22
+theme_override_constants/line_spacing = -6
 theme_override_font_sizes/font_size = 100
-text = "Unser Cooler
-Titel"
+text = "Slam to the
+Laughter"
 horizontal_alignment = 1
+
+[node name="robot" type="TextureRect" parent="ParallaxBackground/ParallaxLayer5"]
+offset_left = 222.0
+offset_top = 397.0
+offset_right = 1126.0
+offset_bottom = 1300.0
+scale = Vector2(0.829229, 0.668191)
+texture = ExtResource("4_mrg3b")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.65, 0.65)
@@ -146,24 +160,25 @@ offset_right = 1023.0
 offset_bottom = 1364.0
 texture = ExtResource("4_f3xgm")
 
-[node name="Warning" type="Label" parent="ParallaxBackground/ParallaxLayer"]
-offset_left = 70.0
-offset_top = 104.0
-offset_right = 141.0
-offset_bottom = 179.0
+[node name="Warning" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 53.0
+offset_top = 88.0
+offset_right = 124.0
+offset_bottom = 163.0
 rotation = -0.811578
-theme = ExtResource("2_6jhye")
-text = "Contains
+theme_override_fonts/normal_font = ExtResource("7_2lgbc")
+bbcode_enabled = true
+text = "[wave amp=30.0 freq=3.0 connected=0]Contains
 Medival
-Nudity!"
+Nudity![/wave]"
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="AnimatedAnimal" parent="ParallaxBackground/ParallaxLayer4" instance=ExtResource("6_jsla4")]
-offset_left = 208.0
-offset_top = 502.0
-offset_right = 208.0
-offset_bottom = 502.0
+offset_left = 112.0
+offset_top = 515.0
+offset_right = 112.0
+offset_bottom = 515.0
 scale = Vector2(0.3, 0.3)
 
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
