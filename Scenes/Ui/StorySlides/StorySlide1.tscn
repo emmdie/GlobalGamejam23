@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cimf8ppi1dws5"]
+[gd_scene load_steps=10 format=3 uid="uid://ciedw303yqcp1"]
 
-[ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_6q8uw"]
-[ext_resource type="Texture2D" uid="uid://df4ie7yk8gcve" path="res://Assets/Gaphics/Ui/StorySlides/AnimalDrawing.jpg" id="2_4q4fm"]
-[ext_resource type="Texture2D" uid="uid://2kq8v050jqof" path="res://Assets/Gaphics/Ui/StorySlides/monsters/CyclopsHead.png" id="3_frbjt"]
-[ext_resource type="Texture2D" uid="uid://w5f2w22q3r5c" path="res://Assets/Gaphics/Ui/StorySlides/monsters/cyclopsBottom.png" id="4_skkbt"]
-[ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="5_ngbav"]
-[ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="5_r01h5"]
+[ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_6fouu"]
+[ext_resource type="Texture2D" uid="uid://df4ie7yk8gcve" path="res://Assets/Gaphics/Ui/StorySlides/AnimalDrawing.jpg" id="2_x5f1x"]
+[ext_resource type="Texture2D" uid="uid://2kq8v050jqof" path="res://Assets/Gaphics/Ui/StorySlides/monsters/CyclopsHead.png" id="3_am730"]
+[ext_resource type="Texture2D" uid="uid://w5f2w22q3r5c" path="res://Assets/Gaphics/Ui/StorySlides/monsters/cyclopsBottom.png" id="4_fntsr"]
+[ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="5_vqrm3"]
+[ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="6_rhoqp"]
 
 [sub_resource type="Animation" id="Animation_6m27b"]
 length = 0.001
@@ -75,7 +75,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6q8uw")
+script = ExtResource("1_6fouu")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -93,7 +93,7 @@ offset_bottom = 837.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_4q4fm")
+texture = ExtResource("2_x5f1x")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.05, 0.05)
@@ -125,7 +125,7 @@ offset_right = 636.0
 offset_bottom = 677.0
 rotation = 0.174533
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_frbjt")
+texture = ExtResource("3_am730")
 
 [node name="Bottom" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3/AnimatedAnimal"]
 layout_mode = 2
@@ -134,7 +134,7 @@ offset_top = 114.0
 offset_right = 1470.0
 offset_bottom = 2207.0
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_skkbt")
+texture = ExtResource("4_fntsr")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.2, 0.2)
@@ -144,7 +144,7 @@ offset_left = 51.0
 offset_top = 147.0
 offset_right = 775.0
 offset_bottom = 317.0
-theme = ExtResource("5_r01h5")
+theme = ExtResource("5_vqrm3")
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -160,7 +160,7 @@ wait_time = 0.04
 autostart = true
 
 [node name="keyBoardSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_ngbav")
+stream = ExtResource("6_rhoqp")
 volume_db = -16.865
 
 [node name="NextButton" type="Button" parent="."]
