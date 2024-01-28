@@ -14,7 +14,8 @@ func _ready():
 	for enemy in $Enemies.get_children():
 		enemies_left += 1
 		enemy.enemy_died.connect(enemy_died)
-	print("Enemy count: " + str(enemies_left))
+	SceneList.totalEnemies = enemies_left
+	SceneList.currentEnemies = 0
 
 func _unhandled_input(event):
 	if event is InputEventKey:
@@ -42,6 +43,7 @@ func enemy_died():
 	enemies_left -= 1
 	if enemies_left <= 0:
 		level_won()
+	SceneList.currentEnemies += 1
 
 func player_died():
 	var level_loose_screen = load(SceneList.level_loose_screen).instantiate()
