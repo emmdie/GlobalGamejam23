@@ -23,3 +23,6 @@ const endSlide2 = "res://Scenes/Ui/StorySlides/EndSlide2.tscn"
 const endSlide3 = "res://Scenes/Ui/StorySlides/Endslide3.tscn"
 const endSlides = [endSlide1, endSlide2, endSlide3]
 const endSlideShow = "res://Scenes/Ui/StorySlides/Endslideshow.tscn"
+
+var totalEnemies = 0
+var currentEnemies = 0

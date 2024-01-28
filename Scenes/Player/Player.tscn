@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://baeoasb40ibv4"]
+[gd_scene load_steps=31 format=3 uid="uid://baeoasb40ibv4"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player_main.gd" id="1_mrhpv"]
 [ext_resource type="PackedScene" uid="uid://flhnxq6k1liu" path="res://Scenes/BulletHoles/bullet_hole.tscn" id="2_ln82l"]
@@ -10,9 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://b4qk0mgdxx6j0" path="res://Assets/Gaphics/player/gun_min_fire.png" id="8_kkqfy"]
 [ext_resource type="Script" path="res://Scripts/Common/AudioCue2D.gd" id="9_1c6da"]
 [ext_resource type="Texture2D" uid="uid://1wjsvrje1wro" path="res://Assets/Gaphics/player/heart.png" id="9_pb05i"]
+[ext_resource type="Texture2D" uid="uid://bo14fyxfjuufp" path="res://Assets/Gaphics/Ui/StorySlides/lowResSmile.png" id="10_1kerx"]
 [ext_resource type="AudioStream" uid="uid://dnrcs1d7g673y" path="res://Assets/Sounds/Weapon/shot_1.wav" id="10_uahq2"]
 [ext_resource type="AudioStream" uid="uid://c4coi312mw1xa" path="res://Assets/Sounds/Player/player_jump.wav" id="11_52j0d"]
 [ext_resource type="AudioStream" uid="uid://cbaw2vpdge14u" path="res://Assets/Sounds/Player/player_hurt1.wav" id="11_ho2ha"]
+[ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="11_jrjg2"]
 [ext_resource type="AudioStream" uid="uid://mnq8ianttbyh" path="res://Assets/Sounds/Player/player_hurt2.wav" id="12_s7x6c"]
 [ext_resource type="AudioStream" uid="uid://cmdtg4mu442pm" path="res://Assets/Sounds/Player/player_death.wav" id="15_arl5e"]
 [ext_resource type="AudioStream" uid="uid://bd3rtj5g260le" path="res://Assets/Audio/music/Burn The World Waltz .ogg" id="16_l3iif"]
@@ -148,6 +150,43 @@ _data = {
 "RESET": SubResource("Animation_55ged")
 }
 
+[sub_resource type="Animation" id="Animation_go88w"]
+resource_name = "rotateSmile"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tape:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1, 0.1, 0.3, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.698132, 0.0, 0.698132, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kgh3g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tape:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fndt3"]
+_data = {
+"RESET": SubResource("Animation_kgh3g"),
+"rotateSmile": SubResource("Animation_go88w")
+}
+
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 5
@@ -276,6 +315,36 @@ libraries = {
 }
 autoplay = "HeartBeat"
 
+[node name="killHud" type="Control" parent="HUD"]
+anchors_preset = 0
+offset_left = 1024.0
+offset_top = 596.0
+offset_right = 1064.0
+offset_bottom = 636.0
+
+[node name="Tape" type="TextureRect" parent="HUD/killHud"]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -10.0
+offset_right = 157.0
+offset_bottom = 70.0
+scale = Vector2(0.531554, 0.599199)
+pivot_offset = Vector2(100, 20)
+texture = ExtResource("10_1kerx")
+
+[node name="KillCount" type="Label" parent="HUD/killHud"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("11_jrjg2")
+text = "0 / 0"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/killHud"]
+libraries = {
+"": SubResource("AnimationLibrary_fndt3")
+}
+autoplay = "rotateSmile"
+
 [node name="WeaponCooldown" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
@@ -304,5 +373,4 @@ one_shot = true
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_l3iif")
-volume_db = -3.0
 autoplay = true
