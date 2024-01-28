@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://baeoasb40ibv4"]
+[gd_scene load_steps=23 format=3 uid="uid://baeoasb40ibv4"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player_main.gd" id="1_mrhpv"]
 [ext_resource type="PackedScene" uid="uid://flhnxq6k1liu" path="res://Scenes/BulletHoles/bullet_hole.tscn" id="2_ln82l"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://cbaw2vpdge14u" path="res://Assets/Sounds/Player/player_hurt1.wav" id="11_ho2ha"]
 [ext_resource type="AudioStream" uid="uid://mnq8ianttbyh" path="res://Assets/Sounds/Player/player_hurt2.wav" id="12_s7x6c"]
 [ext_resource type="AudioStream" uid="uid://cmdtg4mu442pm" path="res://Assets/Sounds/Player/player_death.wav" id="15_arl5e"]
+[ext_resource type="AudioStream" uid="uid://bd3rtj5g260le" path="res://Assets/Audio/music/Burn The World Waltz .ogg" id="16_l3iif"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4kqlh"]
 
@@ -200,3 +201,8 @@ sources = Array[AudioStream]([ExtResource("15_arl5e")])
 [node name="HurtTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_l3iif")
+volume_db = -3.0
+autoplay = true
