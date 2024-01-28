@@ -151,6 +151,10 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 32
 text = "Once upon a time, the public domain book characters of the world lived in peace and harmony. Sure, some of the medival ones looked a bit weird, but They were free of copyright and happy for it"
 
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="CharacterTimer" type="Timer" parent="."]
 wait_time = 0.04
 autostart = true
