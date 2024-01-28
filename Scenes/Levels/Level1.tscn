@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bodci8tmyh4yb" path="res://trenchbroom/textures/Level1WallsA.png" id="8_rmsyu"]
 [ext_resource type="Texture2D" uid="uid://c2l67gk2c0u7d" path="res://trenchbroom/textures/stn_c06_sand2.png" id="10_yf125"]
 [ext_resource type="Texture2D" uid="uid://ciqp23d1tppo2" path="res://trenchbroom/textures/stn_t01a_sand2.png" id="11_2m34b"]
-[ext_resource type="PackedScene" uid="uid://b5vwyi1e335h7" path="res://Scenes/Enemies/shield_guy_with_turban.tscn" id="11_rag4f"]
+[ext_resource type="PackedScene" path="res://Scenes/Enemies/shield_guy_with_turban.tscn" id="11_rag4f"]
 [ext_resource type="Texture2D" uid="uid://hu8ff7gjab7l" path="res://trenchbroom/textures/stn_gt01_sand2.png" id="12_ihsow"]
 [ext_resource type="PackedScene" uid="uid://bl71di7yb1ya8" path="res://Scenes/Enemies/persian_demon.tscn" id="12_tvseg"]
 [ext_resource type="PackedScene" uid="uid://b3j87sm42c8ww" path="res://Scenes/Enemies/naked_shield_enemy.tscn" id="13_8x0jh"]
