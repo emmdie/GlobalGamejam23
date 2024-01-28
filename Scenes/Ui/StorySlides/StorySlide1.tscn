@@ -163,18 +163,4 @@ autostart = true
 stream = ExtResource("6_rhoqp")
 volume_db = -16.865
 
-[node name="NextButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-offset_top = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Continue"
-
 [connection signal="timeout" from="CharacterTimer" to="." method="_on_character_timer_timeout"]
-[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

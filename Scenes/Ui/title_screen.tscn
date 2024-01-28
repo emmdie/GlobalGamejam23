@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dxk27vl1b7w7c"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/title_screen.gd" id="1_23ck3"]
-[ext_resource type="Theme" uid="uid://vix4fuwlk1fu" path="res://MainTheme.tres" id="2_6jhye"]
+[ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="2_6jhye"]
 [ext_resource type="Texture2D" uid="uid://c5un66qxlutqa" path="res://Assets/Gaphics/Ui/TitleScreenParallax/Book.jpg" id="2_22240"]
 [ext_resource type="Texture2D" uid="uid://d0ictcliicru4" path="res://Assets/Gaphics/Ui/TitleScreenParallax/scaryAsianPainting.png" id="2_jak1b"]
 [ext_resource type="Texture2D" uid="uid://bfyixck3fenir" path="res://Assets/Gaphics/Ui/TitleScreenParallax/Eye.png" id="3_3mm4n"]
