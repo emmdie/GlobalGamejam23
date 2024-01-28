@@ -56,14 +56,14 @@ func _process(delta: float):
 	_calculate_velocity(direction, delta)
 	
 	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and _can_jump():
+	if Input.is_action_just_pressed("jump")  and _can_jump():
 		$SFX/Jump.playQueue()
 		velocity.y = JUMP_VELOCITY
 		coyoteTimer.start(COYOTE_TIME)
 	move_and_slide()
 
 func _can_jump():
-	return is_on_floor() || in_coyote_time
+	return is_on_floor() #|| in_coyote_time
 
 
 func _calculate_velocity(dir: Vector3, delta: float):
