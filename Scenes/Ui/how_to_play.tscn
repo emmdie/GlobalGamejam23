@@ -30,7 +30,7 @@ bbcode_enabled = true
 text = "How to play:
 Use your tape Gun to apply smile Tapes to the enemies faces
 so go and shoot some  headshots. 
-[img=200]res://Assets/Gaphics/Ui/howTo/untapedFace.png[/img]  =>  [img=200]res://Assets/Gaphics/Ui/howTo/TapedFace.png[/img]
+[img=300]res://Assets/Gaphics/Ui/howTo/untapedFace.png[/img]  =>  [img=300]res://Assets/Gaphics/Ui/howTo/TapedFace.png[/img]
 
 
 "
