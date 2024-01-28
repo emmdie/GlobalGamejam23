@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cs1ywtna65adc"]
+[gd_scene load_steps=13 format=3 uid="uid://cs1ywtna65adc"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_b5nkt"]
 [ext_resource type="Texture2D" uid="uid://doe78xmsjtey4" path="res://Assets/Gaphics/Ui/StorySlides/nothernLights.jpeg" id="2_yh200"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://buhmuq7xfusy1" path="res://Assets/Gaphics/enemies/persianDemon.png" id="8_vl1ub"]
 [ext_resource type="Texture2D" uid="uid://cugnylftce3di" path="res://Assets/Gaphics/enemies/fish.png" id="9_p1w7o"]
 [ext_resource type="Texture2D" uid="uid://64kl1dxwrt16" path="res://Assets/Gaphics/enemies/ShieldGuy.png" id="10_7ind2"]
+[ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="11_84u4e"]
 
 [node name="StorySlide1" type="Control"]
 layout_mode = 3
@@ -120,15 +121,16 @@ texture = ExtResource("10_7ind2")
 motion_scale = Vector2(0, 0)
 
 [node name="SlideTextDisplay" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
-offset_left = 200.0
-offset_top = 96.0
-offset_right = 913.0
-offset_bottom = 296.0
+offset_left = 242.0
+offset_top = 181.0
+offset_right = 925.0
+offset_bottom = 344.0
+theme = ExtResource("11_84u4e")
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 23
-text = "Can you fello player aid DOMAIN_DEFENDATRON in his Open Canvas Combat? The mission is simple: Shoot as many Tape-Smiles as possible back onto these Sad faces. 
+theme_override_font_sizes/normal_font_size = 29
+text = "Can you fellow player aid DOMAIN_DEFENDATRON in his Open Canvas Combat? The mission is simple: Shoot as many tape-smiles as possible back onto these sad faces. 
 So turn on the aimbot - today we're doing headshots!"
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cimf8ppi1dws5"]
+[gd_scene load_steps=10 format=3 uid="uid://cimf8ppi1dws5"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_6q8uw"]
 [ext_resource type="Texture2D" uid="uid://df4ie7yk8gcve" path="res://Assets/Gaphics/Ui/StorySlides/AnimalDrawing.jpg" id="2_4q4fm"]
 [ext_resource type="Texture2D" uid="uid://2kq8v050jqof" path="res://Assets/Gaphics/Ui/StorySlides/monsters/CyclopsHead.png" id="3_frbjt"]
 [ext_resource type="Texture2D" uid="uid://w5f2w22q3r5c" path="res://Assets/Gaphics/Ui/StorySlides/monsters/cyclopsBottom.png" id="4_skkbt"]
 [ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="5_ngbav"]
+[ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="5_r01h5"]
 
 [sub_resource type="Animation" id="Animation_6m27b"]
 length = 0.001
@@ -139,16 +140,16 @@ texture = ExtResource("4_skkbt")
 motion_scale = Vector2(0.2, 0.2)
 
 [node name="SlideTextDisplay" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
-offset_left = 26.0
-offset_top = 120.0
-offset_right = 739.0
-offset_bottom = 232.0
+offset_left = 51.0
+offset_top = 147.0
+offset_right = 775.0
+offset_bottom = 317.0
+theme = ExtResource("5_r01h5")
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 23
-text = "Once upon a time, the public domain book characters of the world lived in peace and harmony. 
-They were free of copyright and happy for it"
+theme_override_font_sizes/normal_font_size = 32
+text = "Once upon a time, the public domain book characters of the world lived in peace and harmony. Sure, some of the medival ones looked a bit weird, but They were free of copyright and happy for it"
 
 [node name="CharacterTimer" type="Timer" parent="."]
 wait_time = 0.04
