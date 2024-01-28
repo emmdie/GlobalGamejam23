@@ -23,7 +23,7 @@ func fade(color: Color, time: float):
 	return t.finished
 
 func update_health(curr):
-	var h = $GridContainer.get_children()[curr]
+	var h = $HeartBar.get_children()[curr]
 	var t = create_tween()
 	t.tween_property(h, "scale", h.scale*1.1, 0.2).set_trans(Tween.TRANS_ELASTIC)
 	t.chain().tween_property(h, "scale", Vector2.ZERO, 0.1)
