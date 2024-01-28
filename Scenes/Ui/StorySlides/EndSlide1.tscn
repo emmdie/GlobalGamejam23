@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=3 uid="uid://dg1rvajwm8kf7"]
+
+[ext_resource type="Script" path="res://Scripts/Ui/story_slide.gd" id="1_qkqoi"]
+[ext_resource type="Texture2D" uid="uid://4gepes7mshwb" path="res://Assets/Gaphics/Ui/StorySlides/Rainforrest.jpg" id="2_pyx41"]
+[ext_resource type="Texture2D" uid="uid://dvl01c46brlp" path="res://Assets/Gaphics/Ui/StorySlides/robot.png" id="3_6nllo"]
+[ext_resource type="Texture2D" uid="uid://bo14fyxfjuufp" path="res://Assets/Gaphics/Ui/StorySlides/lowResSmile.png" id="4_5rqxp"]
+[ext_resource type="Texture2D" uid="uid://bfyixck3fenir" path="res://Assets/Gaphics/Ui/TitleScreenParallax/Eye.png" id="5_40yc0"]
+[ext_resource type="Texture2D" uid="uid://dtrju58dag5xi" path="res://Assets/Gaphics/Ui/TitleScreenParallax/NakedShieldGuyWithSmile.png" id="6_gywdm"]
+[ext_resource type="Theme" uid="uid://bhlm6yt0qswao" path="res://MainTheme.tres" id="9_sush4"]
+[ext_resource type="AudioStream" uid="uid://cxcnox36kouh6" path="res://Assets/Audio/Sfx/Ui/keyboard.mp3" id="10_f6u0s"]
+
+[node name="EndSlide1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qkqoi")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Background" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -101.0
+offset_top = -215.0
+offset_right = 1488.0
+offset_bottom = 1061.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_pyx41")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+
+[node name="robot" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+offset_left = -125.0
+offset_top = 253.0
+offset_right = 779.0
+offset_bottom = 1156.0
+rotation = -0.254818
+scale = Vector2(0.542466, 0.542542)
+texture = ExtResource("3_6nllo")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ParallaxBackground/ParallaxLayer3/robot"]
+position = Vector2(905.134, 437.633)
+rotation = 0.598648
+amount = 2
+lifetime = 4.0
+texture = ExtResource("4_5rqxp")
+direction = Vector2(1, -0.8)
+spread = 54.09
+gravity = Vector2(0, 200)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+offset_left = 617.0
+offset_top = 179.0
+offset_right = 1155.0
+offset_bottom = 893.0
+scale = Vector2(0.516563, 0.699102)
+texture = ExtResource("5_40yc0")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="SlideTextDisplay" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 119.0
+offset_top = 114.0
+offset_right = 849.0
+offset_bottom = 253.0
+theme = ExtResource("9_sush4")
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 29
+bbcode_enabled = true
+text = "And so, with the Help of you, the player, DOMAIN_DEFENDER was Able to Return smiles to the World.   
+Haters will say they were just taped on, but you and I know better."
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer4"]
+offset_left = 803.0
+offset_top = 126.0
+offset_right = 1315.0
+offset_bottom = 1150.0
+scale = Vector2(0.51494, 0.574207)
+texture = ExtResource("6_gywdm")
+
+[node name="CharacterTimer" type="Timer" parent="."]
+wait_time = 0.04
+autostart = true
+
+[node name="keyBoardSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_f6u0s")
+volume_db = -16.865
+
+[node name="NextButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Continue"
+
+[connection signal="timeout" from="CharacterTimer" to="." method="_on_character_timer_timeout"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
