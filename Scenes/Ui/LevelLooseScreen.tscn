@@ -62,6 +62,7 @@ grow_vertical = 0
 layout_mode = 2
 
 [node name="Retry" type="Button" parent="CenterContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("3_8rpn1")
 text = "Retry"

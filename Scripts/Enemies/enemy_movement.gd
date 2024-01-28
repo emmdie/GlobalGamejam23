@@ -54,6 +54,9 @@ func hit(dmg, normal):
 	if dead: return
 	$Sprite/EnemySprite/AnimationPlayer.stop()
 	shake()
+	var t = create_tween()
+	$Sprite/EnemySprite.modulate = Color.RED
+	t.tween_property($Sprite/EnemySprite, "modulate", Color.WHITE, 0.2)
 	die()
 	var smileTex = smiles[randi_range(0, smiles.size()-1)]
 	$Sprite/EnemySprite/Smile.texture = smileTex
@@ -63,6 +66,7 @@ func hit(dmg, normal):
 	health -= dmg
 	await get_tree().create_timer(0.2).timeout
 	$SFX/Laugth.playQueue()
+	$DestroyTimer.start()
 
 func die(give_points: bool = true):
 	if dead: return
@@ -131,3 +135,10 @@ func test_collisions():
 				if $HitCoolDown.is_stopped():
 					$HitCoolDown.start()
 					col.get_collider().hit(col.get_normal())
+
+
+func _on_destroy_timer_timeout():
+	var t = create_tween()
+	t.tween_property($Sprite/EnemySprite, "modulate", Color.TRANSPARENT, 0.4)
+	await t.finished
+	queue_free()

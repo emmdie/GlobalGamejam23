@@ -224,3 +224,9 @@ sources = Array[AudioStream]([ExtResource("7_2sk7j")])
 [node name="HitCoolDown" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="DestroyTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]
