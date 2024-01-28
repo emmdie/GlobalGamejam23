@@ -61,6 +61,7 @@ grow_vertical = 0
 layout_mode = 2
 
 [node name="Retry" type="Button" parent="CenterContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Retry"
 
