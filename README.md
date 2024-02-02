@@ -1,6 +1,6 @@
 A simple retro-shooter made using Godot and trenchbroom, heavily utilizing public domain art. 
 
-Made for the Global Game Jam 2023 at the IX Lab Site at TU Dresden by a team of three. 
+Made in 48 hours for the Global Game Jam 2023 at the IX Lab Site at TU Dresden by a team of three. 
 
 
 Play in the Browser on [itch.io](https://emmdie.itch.io/slam-to-the-laughter)
